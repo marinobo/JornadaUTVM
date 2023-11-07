@@ -110,7 +110,9 @@ body{
     color: #ffffff;
     justify-content: center;
     display: flex;
+   
   }
+ 
   /*tabs*/
   .link-row{
     background-color: #39ab57;
@@ -216,8 +218,12 @@ body{
   
   .image img {
     width: 500px; /* Ajusta el ancho máximo de la imagen */
-    height: 200px; ;
+    height: 200px; 
+    object-fit: cover;
   }
+   .name_p{
+    background-color: #952d3d;
+   }
   
   @media (max-width: 768px) {
     .card {
@@ -317,7 +323,7 @@ body{
     padding: 10px; /* Agregar un pequeño espacio entre las imágenes */
 }
 
-.image {
+.images {
     
     max-width: 500px; /* Establecer un ancho máximo para las imágenes */
     text-align: center;
@@ -329,7 +335,51 @@ img {
     height: auto;
     display: block;
 }
-
+/*modal-pdf */
+.modal-pdf {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  #pdf-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 /* Estilos de visor de imágenes */
 .lightbox {
     display: none;
