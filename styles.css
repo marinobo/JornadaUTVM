@@ -236,5 +236,38 @@ body{
 
 
 
-/* Estilos de menu estatico */
+/* Estilos para pantallas grandes */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
 
+nav li {
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px de ancho) */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+
+  nav li:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+}
