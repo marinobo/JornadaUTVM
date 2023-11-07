@@ -1,0 +1,426 @@
+body{
+    margin: 0;
+    font-family: Arial;
+    font-size: 20px;
+    background: rgb(185, 182, 182);
+    
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+    
+   
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+    
+  }
+  .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    /* rtl:remove */
+    letter-spacing: -.05rem;
+  }
+  
+  .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    /* rtl:remove */
+    letter-spacing: -.05rem;
+  }
+  /* Aplicar fondo oscuro semi-transparente a las imágenes del carrusel */
+  .carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    z-index: 1;
+  }
+  
+  /* Asegurar que el contenido de la diapositiva esté por encima del fondo oscuro */
+  .carousel-caption {
+    position: relative;
+    z-index: 2;
+    color: #fff; /* Color de texto en la diapositiva */
+  }
+  
+  /* Ajustar el color del texto en los indicadores */
+  .carousel-indicators {
+    color: #fff;
+  }
+  .top-container {
+    background-position: center;
+    text-align: center;
+    padding: 100px;
+    font-family: arial;/*fuente de texto*/
+  }
+  #logo {
+    display: flex;
+    position: relative;
+    margin: 0;
+    max-width: 100%; /* Cambia el ancho máximo al 100% para que la imagen sea responsive */
+    height: auto; /* Ajusta la altura automáticamente para mantener la relación de aspecto */
+  }
+  
+  .titulo{
+    color: #f1f1f1;
+    font-family:Arial;
+    
+  }
+  .header {
+    display: grid;
+    place-content: center;
+    padding: 10px 16px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+ 
+  /*----*/
+  .baner{
+    /*margin-top: -70px;*/
+    background-color: #952d3d;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+  }
+  /*tabs*/
+  .link-row{
+    background-color: #39ab57;
+    font-size: xx-large;
+    font-family: Arial;
+    display: flex;
+    justify-content:end;
+    color: #ffffff;
+}
+.confes{
+        font-size: xx-large;
+        font-family: Arial;
+        display: flex;
+        justify-content: center;
+        color: #000000;
+}
+  .link-row a {
+    margin-top: 50px;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    width: 400px;
+    border-radius: 5%;
+  }
+  .tablink-active {
+  border-bottom: thick solid;
+  }
+  
+  .content {
+    display: none;
+  }
+  thead{
+    background-color: #d1a169;
+    color:#ffffff;
+  }
+  tbody{
+    background-color: #ffffff;
+  }
+  
+  /*cards*/
+  .seccion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
+/*galeria*/
+  .galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria li {
+	margin: 5px;
+}
+
+.galeria img {
+	width: 500px;
+	height:200px;
+}
+
+/*Estilos del modal*/
+
+.modal {
+	display: none;
+}
+
+.modal:target {
+	
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.imagen {
+	width: 100%;
+	height: 50%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imagen a {
+	color: #fff;
+	font-size: 70px;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.imagen a:nth-child(2) {
+	margin: 0;
+	height: 100%;
+	flex-shrink: 2;
+}
+
+.imagen img {
+	width: 500px;
+	height: 100%;
+	max-width: 100%;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+}
+
+.cerrar {
+	display: block;
+	background: #952d3d;
+	width: 100px;
+	margin: 15px auto;
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	padding: 5px;
+	line-height: 25px;
+  color: #ffffff;
+  border-radius: 5%;
+}
+/* Estilos de galería */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px; /* Agregar un pequeño espacio entre las imágenes */
+}
+
+.image {
+    
+    max-width: 500px; /* Establecer un ancho máximo para las imágenes */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos de visor de imágenes */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-content {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Media queries para hacer que la galería sea responsive */
+@media (max-width: 768px) {
+    .image {
+        flex-basis: 100%; /* En dispositivos más pequeños, las imágenes ocuparán el 100% del ancho */
+    }
+    .lightbox-content {
+        max-width: 90%; /* Ajustar el tamaño del visor de imágenes en dispositivos pequeños */
+    }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 60px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+  display: block;
+  transition: .3s;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  nav {
+      flex-direction: column;
+  }
+
+  nav ul {
+      width: 100%;
+      display: none;
+  }
+
+  nav ul.show {
+      display: block;
+  }
+
+  .toggle-nav {
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+  }
+}
+
+
+
+/* Estilos para pantallas grandes */
+nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+}
+
+nav li {
+margin: 0;
+padding: 0;
+}
+
+nav a {
+display: block;
+padding: 15px 20px;
+text-decoration: none;
+color: #333;
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px de ancho) */
+@media screen and (max-width: 768px) {
+nav ul {
+flex-direction: column;
+}
+
+nav li {
+text-align: center;
+border-top: 1px solid #ccc;
+}
+
+nav li:last-child {
+border-bottom: 1px solid #ccc;
+}
+}
