@@ -116,10 +116,25 @@ body{
     background-color: #39ab57;
     font-size: xx-large;
     font-family: Arial;
-    display: flex;
-    justify-content:end;
     color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.tablink {
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    .tablink {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
 .confes{
         font-size: xx-large;
         font-family: Arial;
@@ -128,10 +143,8 @@ body{
         color: #000000;
 }
   .link-row a {
-    margin-top: 50px;
     text-decoration: none;
     padding: 10px;
-    display: block;
     width: 400px;
     border-radius: 5%;
   }
@@ -149,6 +162,31 @@ body{
   tbody{
     background-color: #ffffff;
   }
+  .content {
+    flex: 1;
+    margin: 10px;
+    max-width: 100%;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    table th,
+    table td {
+      padding: 5px;
+      font-size: 12px;
+    }
+  }
   
   /*cards*/
   .seccion {
@@ -160,11 +198,10 @@ body{
   .card {
     width: 300px;
     margin: 10px;
-    border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
     border-radius: 5%;
-    background-color: #f9f9f9;
+    background-color: #d7a770;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   

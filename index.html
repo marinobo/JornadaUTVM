@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles_index.css">
-
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <script src="galeria."></script>
+
+
 </head>
 <style>
     
@@ -20,13 +23,13 @@
     </header>
 
     <nav>
-      <ul>
-        <li><a href="#">Talleres</a></li>
-        <li><a href="#">Conferencias</a></li>
-        <li><a href="#">Actividades</a></li>
-        <li><a href="#">Galeria</a></li>
-      </ul>
-    </nav>
+        <ul>
+          <li><a href="#talleres">Talleres</a></li>
+          <li><a href="#ponentes">Ponentes</a></li>
+          <li><a href="#actividades">Actividades</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </nav>
       <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <div class="top-container">
@@ -64,185 +67,193 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        <section id="actividades"></section>
         <div class="baner">
             <h1 class="display-1">Actividades</h1>
           </div>
-          <div class="seccion1">
-            <div class="link-row">
-                <a  onclick="openContent(event, '1');">
-                    <div class="tablink">10 de noviembre</div>
-                </a>
-                <a onclick="openContent(event, '2');">
-                    <div class="tablink">11 de noviembre</div>
-                </a>
-                <a  onclick="openContent(event, '3');">
-                    <div class="tablink">12 de noviembre</div>
-                </a>
-            </div>
-        
-            <div class="confes">
-                <div id="1" class="content">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Actividad</th>
-                            <th scope="col">Asisten</th>
-                            <th scope="col">Horario</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                          <tr>
-                            <td>Conferencia Magistral IoT</td>
-                            <td>1ºy 4º</td>
-                            <td>9:00 hrs.</td>
-                          </tr>
-                          <tr>
-                            <td>Conferencia Magistral
-                                Los Videojuegos y los Negocios:
-                                Entre la perspectiva y la vida
-                                extra</td>
-                            <td>7ºy 10º</td>
-                            <td>10:00 hrs.</td>
-                          </tr>
-                          <tr>
-                            <td>INAUGURACIÓN</td>
-                            <td>1º y 4º</td>
-                            <td>12:00 hrs</td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
+          
+            <div class="seccion1">
+                <div class="link-row">
+                    <a  onclick="openContent(event, '1');">
+                        <div class="tablink">10 de noviembre</div>
+                    </a>
+                    <a onclick="openContent(event, '2');">
+                        <div class="tablink">11 de noviembre</div>
+                    </a>
+                    <a  onclick="openContent(event, '3');">
+                        <div class="tablink">12 de noviembre</div>
+                    </a>
                 </div>
             
-                <div id="2" class="content">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Actividad</th>
-                            <th scope="col">Asisten</th>
-                            <th scope="col">Horario</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                          <tr>
-                            <td>Workshop Sentencias de control con
-                                DevC++</td>
-                            <td>1ºros</td>
-                            <td>10:00 hrs.                            </td>
-                          </tr>
-                          <tr>
-                            <td>Workshop Aplicaciones Cloud con Red Hat
-                                - OpenShift</td>
-                            <td>4ºtos</td>
-                            <td>10:00 hrs.</td>
-                          </tr>
-                          <tr>
-                            <td>Workshop Prototipos Web con WebFlow
-                            </td>
-                            <td>7ºmos</td>
-                            <td>12:00 hrs</td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
+                <div class="confes">
+                    <div id="1" class="content">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>Conferencia Magistral IoT</td>
+                                <td>1ºy 4º</td>
+                                <td>9:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Conferencia Magistral
+                                    Los Videojuegos y los Negocios:
+                                    Entre la perspectiva y la vida
+                                    extra</td>
+                                <td>7ºy 10º</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>INAUGURACIÓN</td>
+                                <td>1º y 4º</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                
+                    <div id="2" class="content">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>Workshop Sentencias de control con
+                                    DevC++</td>
+                                <td>1ºros</td>
+                                <td>10:00 hrs.                            </td>
+                              </tr>
+                              <tr>
+                                <td>Workshop Aplicaciones Cloud con Red Hat
+                                    - OpenShift</td>
+                                <td>4ºtos</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Workshop Prototipos Web con WebFlow
+                                </td>
+                                <td>7ºmos</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                
+                    <div id="3" class="content">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>Concurso de videojuegos 
+                                </td>
+                                <td>Inscritos</td>
+                                <td>9:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Kahoot de Redes</td>
+                                <td>Inscritos</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Concurso de fotografía</td>
+                                <td>Inscritos</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
                 </div>
-            
-                <div id="3" class="content">
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Actividad</th>
-                            <th scope="col">Asisten</th>
-                            <th scope="col">Horario</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                          <tr>
-                            <td>Concurso de videojuegos 
-                            </td>
-                            <td>Inscritos</td>
-                            <td>9:00 hrs.</td>
-                          </tr>
-                          <tr>
-                            <td>Kahoot de Redes</td>
-                            <td>Inscritos</td>
-                            <td>10:00 hrs.</td>
-                          </tr>
-                          <tr>
-                            <td>Concurso de fotografía</td>
-                            <td>Inscritos</td>
-                            <td>12:00 hrs</td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                </div>
-            </div>
-          </div>
+              </div>
+          </section>
+       <section id="ponentes">
         <div class="baner">
-          <h1 class="display-1">Ponentes</h1>
-        </div>
-        <div class="seccion">
-          <div class="card">
-            <img src="img/logo.png" alt="Imagen 1">
-            <h2>Luis Martínez</h2>
-            <p>Administrador de Sistemas</p>
+            <h1 class="display-1">Ponentes</h1>
           </div>
-          <div class="card">
-            <img src="https://images.pexels.com/photos/943084/pexels-photo-943084.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Imagen 2">
-            <h2>María González</h2>
-            <p>Ingeniera de Software</p>
-          </div>
-          <div class="card">
-            <img src="img/logo.png" alt="Imagen 3">
-            <h2>Ana Rodríguez </h2>
-            <p>Desarrolladora Front-End</p>
-          </div>
-          <div class="card">
-            <img src="img/logo.png" alt="Imagen 4">
-            <h2>Juan Pérez </h2>
-            <p>Analista de Seguridad Informática</p>
-          </div>
-          <div class="card">
-            <img src="img/logo.png" alt="Imagen 5">
-            <h2>Carlos López</h2>
-            <p>Arquitecto de Soluciones de TI</p>
-          </div>
-          <div class="card">
-            <img src="img/logo.png" alt="Imagen 4">
-            <h2>Isabel García</h2>
-            <p> Especialista en Data Science</p>
-          </div>
-        </div>
-        <div class="baner">
-          <h1 class="display-1">Talleres</h1>
-        </div>
-        <div class="seccion">
+          <div class="seccion">
             <div class="card">
               <img src="img/logo.png" alt="Imagen 1">
-              <h2>Taller 1</h2>
-              <p>Descripción</p>
-              <a href="#" class="btn btn-success">Leer más</a>
+              <h2>Luis Martínez</h2>
+              <p>Administrador de Sistemas</p>
             </div>
             <div class="card">
-              <img src="img/logo.png" alt="Imagen 1">
-              <h2>Taller 2</h2>
-              <p>Descripción</p>
-              <a href="#" class="btn btn-success">Leer más</a>
+              <img src="https://images.pexels.com/photos/943084/pexels-photo-943084.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Imagen 2">
+              <h2>María González</h2>
+              <p>Ingeniera de Software</p>
             </div>
             <div class="card">
               <img src="img/logo.png" alt="Imagen 3">
-              <h2>Taller 3</h2>
-              <p>Descripción</p>
-              <a href="#" class="btn btn-success">Leer más</a>
+              <h2>Ana Rodríguez </h2>
+              <p>Desarrolladora Front-End</p>
             </div>
             <div class="card">
               <img src="img/logo.png" alt="Imagen 4">
-              <h2>Taller 4</h2>
-              <p>Descripción</p>
-              <a href="#" class="btn btn-success">Leer más</a>
+              <h2>Juan Pérez </h2>
+              <p>Analista de Seguridad Informática</p>
             </div>
-        </div>
+            <div class="card">
+              <img src="img/logo.png" alt="Imagen 5">
+              <h2>Carlos López</h2>
+              <p>Arquitecto de Soluciones de TI</p>
+            </div>
+            <div class="card">
+              <img src="img/logo.png" alt="Imagen 4">
+              <h2>Isabel García</h2>
+              <p> Especialista en Data Science</p>
+            </div>
+          </div>
+       </section>
+       <section id="talleres">
+        <div class="baner">
+            <h1 class="display-1">Talleres</h1>
+          </div>
+          <div class="seccion">
+              <div class="card">
+                <img src="img/logo.png" alt="Imagen 1">
+                <h2>Taller 1</h2>
+                <p>Descripción</p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+              <div class="card">
+                <img src="img/logo.png" alt="Imagen 1">
+                <h2>Taller 2</h2>
+                <p>Descripción</p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+              <div class="card">
+                <img src="img/logo.png" alt="Imagen 3">
+                <h2>Taller 3</h2>
+                <p>Descripción</p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+              <div class="card">
+                <img src="img/logo.png" alt="Imagen 4">
+                <h2>Taller 4</h2>
+                <p>Descripción</p>
+                <a href="#" class="btn btn-success">Leer más</a>
+              </div>
+          </div>
+       </section>
+       <section id="galeria">
         <div class="baner">
             <h1 class="display-1">Galería</h1>
           </div>
@@ -271,57 +282,30 @@
             <span class="close">&times;</span>
             <img class="lightbox-content" id="lightbox-img">
         </div>
+       </section>
     
 </body>
 <script>
-    function openCity(evt, cityName) {
-      var i, x, tablinks;
-      x = document.getElementsByClassName("city");
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < x.length; i++) {
-         tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.firstElementChild.className += " w3-border-red";
-    }
-    //tabs
-    function openContent(evt, contentName) {
-        var i, x, tablinks;
-        x = document.getElementsByClassName("content");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < x.length; i++) {
-            tablinks[i].classList.remove("tablink-active"); // Elimina la clase de la pestaña activa actual
-        }
-        document.getElementById(contentName).style.display = "block";
-        evt.currentTarget.firstElementChild.classList.add("tablink-active"); // Agrega la clase a la pestaña activa
-    }
-    //galeria
     const gallery = document.querySelector('.gallery');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
-    
-    gallery.addEventListener('click', (e) => {
-        if (e.target.tagName === 'IMG') {
-            lightboxImg.src = e.target.src;
-            lightbox.style.display = 'block';
-        }
-    });
-    
-    closeBtn.addEventListener('click', () => {
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+gallery.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+        lightboxImg.src = e.target.src;
+        lightbox.style.display = 'block';
+    }
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
         lightbox.style.display = 'none';
-    });
-    
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    });
-    </script>
+    }
+});
+</script>
 </html>
