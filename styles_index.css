@@ -198,16 +198,25 @@ body{
   .card {
     width: 300px;
     margin: 10px;
-    padding: 20px;
     text-align: center;
+    color:#ffff;
     border-radius: 5%;
     background-color: #d7a770;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    overflow: hidden;
+  }
+  .image {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .card img {
-    max-width: 100%;
-    height: auto;
+  .image img {
+    width: 500px; /* Ajusta el ancho máximo de la imagen */
+    height: 200px; ;
   }
   
   @media (max-width: 768px) {
