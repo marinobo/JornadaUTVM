@@ -7,19 +7,14 @@
     <title>Login Administrador</title>
 </head>
 <body>
-    <div class="card">
-        <form class="form">
-            <h3 class="form">Iniciar Sesión</h3>
-            <span class="input-span">
-                <label for="email" class="label">Correo</label>
-                <input class="input" id="input" type="email" name="correo" placeholder="Correo Electrónico" title="El campo solo permite email" required>
-            </span>
-            <span class="input-span">
-                <label for="password" class="label">Contraseña</label>
-                <input type="password" name="pass" id="password" placeholder="Contraseña" required>
-            </span>
-            <input name="btniniciar" class="submit" type="submit" value="Enviar">
-        </form>
-    </div>
+    <form action="funciones/consulta.php" method="POST">
+        <label for="username">Usuario:</label>
+        <input type="text" name="usuario" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" name="pass" required>
+        <br>
+        <input type="submit" value="Iniciar Sesión">
+    </form>
 </body>
 </html>
