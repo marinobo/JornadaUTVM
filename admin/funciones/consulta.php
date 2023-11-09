@@ -14,7 +14,7 @@
     if (mysqli_num_rows($result) == 1) {
         // Credenciales válidas, iniciar sesión
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['usuario'] = $usuario;
         // Redirigir al usuario a la página de inicio
         header('Location: index.html');
     } else {
@@ -24,5 +24,5 @@
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conn);
-    
+
 ?>
