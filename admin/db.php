@@ -1,5 +1,5 @@
 <?php
 
-$conexion=mysql_connect("localhost", "root", "", "jornadaUTVM");
+$conexion=mysqli_connect("localhost", "root", "", "jornadaUTVM");
 
 ?>
