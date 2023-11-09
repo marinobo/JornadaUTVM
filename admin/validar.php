@@ -13,7 +13,7 @@ $resultado=mysqli_query($conexion, $consulta);
 $filas=mysqli_num_rows($resultado);
 
 if ($filas) {
-    header("location:home.php");
+    header("location:guardar.php");
 }else {
     ?>
     <?php
