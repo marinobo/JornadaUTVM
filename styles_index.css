@@ -110,7 +110,9 @@ body{
     color: #ffffff;
     justify-content: center;
     display: flex;
+    box-shadow: 0 14px 16px 0 rgba(0, 0, 0, 0.2);
   }
+ 
   /*tabs*/
   .link-row{
     background-color: #39ab57;
@@ -216,8 +218,12 @@ body{
   
   .image img {
     width: 500px; /* Ajusta el ancho máximo de la imagen */
-    height: 200px; ;
+    height: 200px; 
+    object-fit: cover;
   }
+   .name_p{
+    background-color: #952d3d;
+   }
   
   @media (max-width: 768px) {
     .card {
@@ -245,7 +251,10 @@ body{
 	width: 500px;
 	height:200px;
 }
-
+.t-jor{
+    color: #ffffff;
+    border-radius: 5%;
+}
 /*Estilos del modal*/
 
 .modal {
@@ -309,27 +318,108 @@ body{
   border-radius: 5%;
 }
 /* Estilos de galería */
-.gallery {
+.content-galery {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 10px; /* Agregar un pequeño espacio entre las imágenes */
+    top: 0;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+  }
+.gallery-container{
+    display: flex;
+    width: 1200px;
+    height: 430px;
+}
+ 
+.gallery-container img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
 }
 
-.image {
-    
-    max-width: 500px; /* Establecer un ancho máximo para las imágenes */
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.gallery-container img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
+  
+/*modal-pdf */
+.modal-pdf-c {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  .modal-content-c {
+    position: relative;
+    margin: 5% auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  #pdf-iframe-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /*---*/
+.modal-pdf {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  #pdf-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 /* Estilos de visor de imágenes */
 .lightbox {
     display: none;
@@ -371,18 +461,13 @@ img {
     }
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: Arial, sans-serif;
 }
 
 nav {
-  background-color: #333;
+  background-color: #39ab57;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -401,13 +486,12 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  padding: 5px;
   display: block;
   transition: .3s;
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  background-color: #287c3e;
   color: #fff;
 }
 

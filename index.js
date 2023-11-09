@@ -14,3 +14,4 @@
       evt.currentTarget.firstElementChild.classList.add("tablink-active"); // Agrega la clase a la pestaña activa
   }
   
+  
