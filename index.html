@@ -19,8 +19,8 @@
 </style>
 <body>
     <header>
-       <center> <img src="img/b.jpg" id="logo" alt=""></center>
-    </header>
+        <img src="img/b.jpg" id="logo" alt="header" width="100%">
+      </header>
 
     <nav>
         <ul>
@@ -34,7 +34,7 @@
           <div class="carousel-indicators">
             <div class="top-container">
                 <div class="titulo">
-                  <h1 class="display-1">Jornada Académica</h1>
+                  <h1 class="display-4">Jornada Académica</h1>
                 <h1>Tecnologías de la Información</h1>
                 </div>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -69,7 +69,7 @@
         </div>
         <section id="actividades"></section>
         <div class="baner">
-            <h1 class="display-1">Actividades</h1>
+            <h1 class="display-4">Actividades</h1>
           </div>
           
             <div class="seccion1">
@@ -195,7 +195,7 @@
           </section>
           <section id="ponentes">
             <div class="baner">
-                <h1 class="display-1">Ponentes</h1>
+                <h1 class="display-4">Ponentes</h1>
               </div>
               <div class="seccion">
                 <div class="card">
@@ -255,7 +255,7 @@
            </section>
        <section id="talleres">
         <div class="baner">
-            <h1 class="display-1">Convocatorias</h1>
+            <h1 class="display-4">Convocatorias</h1>
           </div>
           <div class="seccion">
               <div class="card">
@@ -264,10 +264,10 @@
                     <h2>Convocatoria 1</h2>
                 </div>
                 <p>Descripción</p>
-                <a href="#  " class="btn btn-success" id="open-pdf">Leer más</a>
-                <div id="pdf-modal" class="modal-pdf">
-                    <div class="modal-content">
-                      <iframe id="pdf-iframe" src="documents/1.pdf"></iframe>
+                <a href="#talleres" class="btn btn-success" id="open-pdf-c">Leer más</a>
+                <div id="pdf-modal-c" class="modal-pdf-c">
+                    <div class="modal-content-c">
+                      <iframe id="pdf-iframe-c" src="documents/1.pdf"></iframe>
                     </div>
                   </div>
               </div>
@@ -299,29 +299,22 @@
        </section>
        <section id="galeria">
         <div class="baner">
-            <h1 class="display-1">Galería</h1>
+            <h1 class="display-4">Galería</h1>
           </div>
-          <div class="gallery">
-            <div class="images">
+         <div class="content-galery">
+            <hr>
+            <h1 class="t-jor display-4"> 2017</h1>
+            <br>
+            <section class="gallery-container">
                 <img src="img/1.jpeg" alt="Imagen 1">
-            </div>
-            <div class="images">
                 <img src="img/2.jpeg" alt="Imagen 2">
-            </div>
-            <div class="images">
                 <img src="img/3.jpeg" alt="Imagen 3">
-            </div>
-            <div class="images">
                 <img src="img/4.jpeg" alt="Imagen 1">
-            </div>
-            <div class="images">
                 <img src="img/5.jpeg" alt="Imagen 2">
-            </div>
-            <div class="images">
                 <img src="img/6.jpeg" alt="Imagen 3">
-            </div>
-        </div>
-    
+            </section>
+         </div>
+          </div>
         <div class="lightbox">
             <span class="close">&times;</span>
             <img class="lightbox-content" id="lightbox-img">
@@ -329,8 +322,10 @@
        </section>
     
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-    const gallery = document.querySelector('.gallery');
+    const gallery = document.querySelector('.gallery-container');
 const lightbox = document.querySelector('.lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.querySelector('.close');
@@ -351,6 +346,8 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+//galeria
+
 // Obtén elementos del DOM pdf
 const openPdfButton = document.getElementById('open-pdf');
 const pdfModal = document.getElementById('pdf-modal');
@@ -367,5 +364,21 @@ pdfModal.addEventListener('click', (event) => {
     pdfModal.style.display = 'none';
   }
 });
+// Obtén elementos del DOM pdf-C
+const openPdfButtonC = document.getElementById('open-pdf-c');
+const pdfModalC = document.getElementById('pdf-modal-c');
+const pdfIframeC = document.getElementById('pdf-iframe-c');
+
+// Agrega un evento click al enlace para abrir el modal
+openPdfButtonC.addEventListener('click', () => {
+  pdfModalC.style.display = 'block';
+});
+
+// Agrega un evento click para cerrar el modal al hacer clic fuera del contenido
+pdfModalC.addEventListener('click', (event) => {
+  if (event.target === pdfModalC) {
+    pdfModalC.style.display = 'none';
+  }
+})
 </script>
 </html>
