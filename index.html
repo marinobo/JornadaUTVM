@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornada Académica|Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles_index.css">
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="index.js"></script>
-    <script src="galeria."></script>
+    <script src="modal.js"></script>
+
 
 
 </head>
@@ -90,8 +94,9 @@
                         <a href="#actividades" id="open-pdf" class="btn btn-success">Descargar programa</a>
                         <div id="pdf-modal" class="modal-pdf">
                             <div class="modal-content">
-                                <iframe id="pdf-iframe" src="documents/JornadaAcadémicaTI2021 (1).pdf"></iframe>
+                                <iframe id="pdf-iframe" src="img/JornadaAcadémicaTI2021 (1).pdf"></iframe>
                             </div>
+
                         </div>
                         <table class="table table-striped table-bordered">
                             <thead>
@@ -103,11 +108,26 @@
                             </thead>
                             <tbody class="table-group-divider">
                               <tr>
-                                <td><a href="#actividades" id="open-modal">Conferencia Magistral IoT</a></td>
-                                  <div id="act-modal" class="modal-pdf">
-                                      <div class="modal-content">
-                            </div>
-                                  </div>
+                                <td><a href="#actividades" id="openModalBtn">Conferencia Magistral
+                                  IoT</a> </td>
+                                <div id="myModal">
+                                    <div class="modal-content">
+                                      <div class="ModalTitle baner">   
+                                        <h1>Conferencia Magistral
+                                          IoT</h1>
+                                      </div>
+                                    
+                                      <div class="Modal-des ">
+                                        <h2>Presenta: </h2>
+                                        <h3>Mtro. Jorge Ramíro Alvarado de la
+                                          Vega</h3>
+                                          <h3>Academy Support Center CISCO</h3>
+                                          <h2> Presenta y entrega reconocimiento</h2>
+                                        <h3>Mtro. Cuitláhuac Alamilla Cintora</h3>
+                                      </div>
+                                      <a href="#actividades" id="closeModalBtn" class="btn btn-danger">Cerrar</a>
+                                    </div>
+                                </div>
                                 <td>1ºy 4º</td>
                                 <td>9:00 hrs.</td>
                               </tr>
@@ -172,7 +192,7 @@
                         <a href="#actividades" id="open-pdf" class="btn btn-success">Descargar programa</a>
                         <div id="pdf-modal" class="modal-pdf">
                             <div class="modal-content">
-                                <iframe id="pdf-iframe" src="documents/JornadaAcadémicaTI2021 (1).pdf"></iframe>
+                                <iframe id="pdf-iframe" src="img/JornadaAcadémicaTI2021 (1).pdf"></iframe>
                             </div>
                         </div>
                         <table class="table table-striped table-bordered">
@@ -344,6 +364,25 @@
           </address>
         </div>
       </footer>
+      <script>
+        var openModalBtn = document.getElementById('openModalBtn');
+        var closeModalBtn = document.getElementById('closeModalBtn');
+        var modal = document.getElementById('myModal');
+
+        openModalBtn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+      </script>
       
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -418,5 +457,7 @@ pdfModalC.addEventListener('click', (event) => {
     pdfModalC.style.display = 'none';
   }
 })
+//modal-ac
+
 </script>
 </html>
