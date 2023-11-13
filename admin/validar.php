@@ -1,5 +1,4 @@
 <?php
-
 $usuario = $_POST['usuario'];
 $pass = $_POST['pass'];
 session_start();
@@ -18,9 +17,9 @@ if ($filas) {
     ?>
     <?php
     include("index.php");
-    ?>
-    <h1>ERROR EN LA AUTENTIFICACION</h1>
+    ?><script>alert('ERROR EN LA AUTENTIFICACION');</script>"
     <?php
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
+?>

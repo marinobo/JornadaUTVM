@@ -10,13 +10,7 @@ if(filter_input(INPUT_POST, 'btnGuardar'))
     $archivo_temp = $_FILES['archivo']['tmp_name'];
     
     //conexion con mysql
-    $conn = mysqli_connect('localhost', 'root', '', 'jornadaUTVM') or die("Error al conectar al servidor");	
-    
-    //verificamos si no hay error en la conexion
-    if(!$conn){
-        $error= mysqli_error($conn);
-        die("ERROR: ".$error["message"]);
-    }
+    $conn = mysqli_connect('localhost', 'root', '', 'jornadautvm') or die("Error al conectar al servidor");	
     
     //convertir la imagen en código binario
     $archivo_binario = (file_get_contents($archivo_temp));
@@ -31,17 +25,32 @@ $stmt = mysqli_prepare($conn, $sql);
 $stmt->bind_param('sss', $archivo_nombre, $archivo_tipo, $archivo_binario);
 
 //ejecutamos la sentencia
-if(mysqli_stmt_execute($stmt))
-{
-    echo "Se ha guardado el archivo en la base de Datos con exito<br/>
-    &Uacute;ltimo id insertado: <a href='ver.php?id=". mysqli_stmt_insert_id($stmt)."'>". mysqli_stmt_insert_id($stmt)."</a>";
-} else
-{
-    echo "Ocurrio un problema al guarda su archivo. ". mysqli_stmt_error($stmt)."<br/>";
+if (mysqli_stmt_execute($stmt)) {
+    $ultimoId = mysqli_stmt_insert_id($stmt);
+    echo "<script>
+            alert('Se ha guardado el archivo en la base de datos con éxito. Último id insertado: $ultimoId');
+            window.location.href='guardar.php?';
+          </script>";
+} else {
+    echo "<script>
+            alert('Ocurrió un problema al guardar su archivo. " . mysqli_stmt_error($stmt) . "');
+          </script>";
 }
+
+
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 }
+session_start();
+
+// Verifica si la variable de sesión está configurada
+if (!isset($_SESSION['usuario'])) {
+    // Si no está configurada, redirige a la página de inicio de sesión
+    header("Location: index.php");
+    exit();
+}
+//forms
+include 'forms.php';
 ?>
 
 <!--FORMULARIO-->
@@ -50,7 +59,13 @@ mysqli_close($conn);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style_home.css">
+        <link rel="stylesheet" href="style_forms.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+        <!-- Agrega esto en el head de tu documento -->
+
         <title>Administrador</title>
     </head>
     <body>
@@ -58,10 +73,7 @@ mysqli_close($conn);
             <h1>Panel de Administrador</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Usuarios</a></li>
-                    <li><a href="#">Configuración</a></li>
-                    <li><a href="#">Salir</a></li>
+                    <button id="btnCerrarSesion" class="btn btn-primary">Cerrar Sesión</button>
                 </ul>
             </nav>
         </header>
@@ -74,10 +86,72 @@ mysqli_close($conn);
                     <input type="submit" name="btnGuardar" value="Guardar" />
                 </form>
             </section>
+            <section class="content">
+    <div class="form-container">
+        <form method="post" action="" class="activity-form">
+            <h1>Actividades</h1>
+            <select class="form-act" name="dia" id="dia-act">
+                <option value="" selected disabled>Elige un día</option>
+                <option value="diauno">Día 1</option>
+                <option value="diados">Día 2</option>
+                <option value="diatres">Día 3</option>
+            </select>
+
+            <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad">
+
+            <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º">
+
+            <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs.">
+
+            <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad">
+
+            <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad">
+
+            <input type="submit" name="btnGuardarAct" value="Guardar">
+        </form>
+    </div>
+</section>
+
+            <section class="content">
+                <div class="form-container">
+                    <form method="post" action="" class="activity-form">
+                        <h1>Ponentes</h1>
+                        <input type="text" name="namePon" placeholder="Nombre del ponente">
+                        <input type="text" name="ocupPon" placeholder="Ocupación del ponente">
+                        <input type="text" name="desPon" placeholder="Descripción del ponente">
+                        <input type="file" name="fotoPon">
+                        <input type="submit" name="btnGuardarPon" value="Guardar">
+                    </form>
+                </div>
+            </section>
+            <section class="content">
+            <div class="form-container">
+                <form method="post" action="" class="activity-form">
+                    <h1>Convocarorias</h1>
+                    <select class="form-con" name="tipo">
+                    <option value="">Elige el tipo de convocatoria</option>
+                        <option value="deportiva">Deportiva</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="talleres">Taller</option>
+                    </select>
+                    <input type="text" name="name-con" placeholder="Nombre de la convocatoria">
+                    <input type="file" name="archivoCon" /><br/><br/>
+                    <input type="submit" name="btnGuardarCon" value="Guardar">
+                </form>
+            </div>
+        </section>
         </main>
+        
         <footer>
             <p>Administrador Jornada Academica © UTVM</p>
         </footer>
     </body>
+    <script>
+        //serrar sesion
+        document.getElementById("btnCerrarSesion").addEventListener("click", function() {
+            // Redirige al archivo PHP que cierra la sesión 
+             window.location.href = "cerrar_sesion.php";
+             });
+</script>
 </html>
 
