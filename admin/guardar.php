@@ -51,6 +51,8 @@ if (!isset($_SESSION['usuario'])) {
 }
 //forms
 include 'forms.php';
+include 'forms_ponentes.php';
+
 ?>
 
 <!--FORMULARIO-->
@@ -114,11 +116,11 @@ include 'forms.php';
 
             <section class="content">
                 <div class="form-container">
-                    <form method="post" action="" class="activity-form">
+                    <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                         <h1>Ponentes</h1>
                         <input type="text" name="namePon" placeholder="Nombre del ponente">
                         <input type="text" name="ocupPon" placeholder="Ocupación del ponente">
-                        <input type="text" name="desPon" placeholder="Descripción del ponente">
+                        <textarea name="desPon" placeholder="Descripción del ponente"></textarea>                        
                         <input type="file" name="fotoPon">
                         <input type="submit" name="btnGuardarPon" value="Guardar">
                     </form>
