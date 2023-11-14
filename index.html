@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="index.js"></script>
@@ -22,185 +22,212 @@
     
 </style>
 <body>
-  <header>
-    <img src="img/b.jpg" id="logo" alt="header" width="100%">
-  </header>
-  
-  <nav>
-    <ul>
-      <li><a href="#talleres">Convocatorias</a></li>
-      <li><a href="#ponentes">Ponentes</a></li>
-      <li><a href="#actividades">Actividades</a></li>
-      <li><a href="#galeria">Galería</a></li>
-    </ul>
-  </nav>
-  
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <div class="top-container">
-        <div class="titulo">
-          <h1 class="display-6">Jornada Académica</h1>
-          <h1>Tecnologías de la Información</h1>
-        </div>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
-    </div>
-    
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/universidad-del-valle-del-mezuital.jpg">
-        <div class="container">
-          <div class="carousel-caption text-start"></div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/03.jpg">
-        <div class="container">
-          <div class="carousel-caption"></div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
-  <section id="actividades">
-    <div class="baner">
-      <h1 class="display-6">Actividades</h1>
-    </div>
-    <div class="seccion1">
-      <div class="link-row">
-        <a  onclick="openContent(event, '1');">
-          <div class="tablink">10 de noviembre</div>
-        </a>
-        <a onclick="openContent(event, '2');">
-          <div class="tablink">11 de noviembre</div>
-        </a>
-        <a  onclick="openContent(event, '3');">
-          <div class="tablink">12 de noviembre</div>
-        </a>
-      </div>
-      <div class="confes">
-        <div id="1" class="content">
-          <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 1</a>
-          <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Actividad</th>
-                <th scope="col">Asisten</th>
-                <th scope="col">Horario</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              <tr>
-                <td><a href="#actividades" id="openModalBtn">Conferencia Magistral IoT</a> </td>
-                <div id="myModal">
-                  <div class="modal-content">
-                    <div class="ModalTitle baner">   
-                      <h1>Conferencia Magistral IoT</h1>
-                    </div>
-                    <div class="Modal-des ">
-                      <h2>Presenta: </h2>
-                      <h3>Mtro. Jorge Ramíro Alvarado de la Vega</h3>
-                      <h3>Academy Support Center CISCO</h3>
-                      <h2> Presenta y entrega reconocimiento</h2>
-                      <h3>Mtro. Cuitláhuac Alamilla Cintora</h3>
-                    </div>
-                    <a href="#actividades" id="closeModalBtn" class="btn btn-danger">Cerrar</a>
-                  </div>
+    <header>
+        <img src="img/b.jpg" id="logo" alt="header" width="100%">
+      </header>
+
+    <nav>
+        <ul>
+          <li><a href="#talleres">Convocatorias</a></li>
+          <li><a href="#ponentes">Ponentes</a></li>
+          <li><a href="#actividades">Actividades</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </nav>
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <div class="top-container">
+                <div class="titulo">
+                  <h1 class="display-6">Jornada Académica</h1>
+                <h1>Tecnologías de la Información</h1>
                 </div>
-                <td>1ºy 4º</td>
-                <td>9:00 hrs.</td>
-              </tr>
-            <tr>
-              <td>Conferencia Magistral Los Videojuegos y los Negocios: Entre la perspectiva y la vida extra</td>
-              <td>7ºy 10º</td>
-              <td>10:00 hrs.</td>
-            </tr>
-            <tr>
-              <td>INAUGURACIÓN</td>
-              <td>1º y 4º</td>
-              <td>12:00 hrs</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              </div>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/universidad-del-valle-del-mezuital.jpg">
+              <div class="container">
+                <div class="carousel-caption text-start">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/03.jpg">
       
-      <div id="2" class="content">
-        <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 2</a>
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Actividad</th>
-              <th scope="col">Asisten</th>
-              <th scope="col">Horario</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr>
-              <td>Workshop Sentencias de control con DevC++</td>
-              <td>1ºros</td>
-              <td>10:00 hrs.</td>
-            </tr>
-            <tr>
-              <td>Workshop Aplicaciones Cloud con Red Hat - OpenShift</td>
-              <td>4ºtos</td>
-              <td>10:00 hrs.</td>
-            </tr>
-            <tr>
-              <td>Workshop Prototipos Web con WebFlow</td>
-              <td>7ºmos</td>
-              <td>12:00 hrs</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <div id="3" class="content">
-        <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 3</a>
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Actividad</th>
-              <th scope="col">Asisten</th>
-              <th scope="col">Horario</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr>
-              <td>Concurso de videojuegos</td>
-              <td>Inscritos</td>
-              <td>9:00 hrs.</td>
-            </tr>
-            <tr>
-              <td>Kahoot de Redes</td>
-              <td>Inscritos</td>
-              <td>10:00 hrs.</td>
-            </tr>
-            <tr>
-              <td>Concurso de fotografía</td>
-              <td>Inscritos</td>
-              <td>12:00 hrs</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div id="Modal-programa">
-      <div class="modal-content-pro">
-        <iframe id="pdfContainer" src="img/CITNOVA.pdf" frameborder="0"></iframe>
-        <a href="#actividades" class="btn btn-danger" id="close-pro">Cerrar Modal</a>
-      </div>
-    </div>
-  </div>
-</section>
+              <div class="container">
+                <div class="carousel-caption">                
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+        <section id="actividades">
+        <div class="baner">
+            <h1 class="display-6">Actividades</h1>
+          </div>
+          
+            <div class="seccion1">
+                <div class="link-row">
+                    <a  onclick="openContent(event, '1');">
+                        <div class="tablink">10 de noviembre</div>
+                    </a>
+                    <a onclick="openContent(event, '2');">
+                        <div class="tablink">11 de noviembre</div>
+                    </a>
+                    <a  onclick="openContent(event, '3');">
+                        <div class="tablink">12 de noviembre</div>
+                    </a>
+                </div>
+            
+                <div class="confes">
+                    <div id="1" class="content">
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 1</a>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td><a href="#actividades" id="openModalBtn">Conferencia Magistral
+                                  IoT</a> </td>
+                                <div id="myModal">
+                                    <div class="modal-content">
+                                      <div class="ModalTitle baner">   
+                                        <h1>Conferencia Magistral
+                                          IoT</h1>
+                                      </div>
+                                    
+                                      <div class="Modal-des ">
+                                        <h2>Presenta: </h2>
+                                        <h3>Mtro. Jorge Ramíro Alvarado de la
+                                          Vega</h3>
+                                          <h3>Academy Support Center CISCO</h3>
+                                          <h2> Presenta y entrega reconocimiento</h2>
+                                        <h3>Mtro. Cuitláhuac Alamilla Cintora</h3>
+                                      </div>
+                                      <a href="#actividades" id="closeModalBtn" class="btn btn-danger">Cerrar</a>
+                                    </div>
+                                </div>
+                                <td>1ºy 4º</td>
+                                <td>9:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Conferencia Magistral
+                                    Los Videojuegos y los Negocios:
+                                    Entre la perspectiva y la vida
+                                    extra</td>
+                                <td>7ºy 10º</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>INAUGURACIÓN</td>
+                                <td>1º y 4º</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                
+                    <div id="2" class="content">
+
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 2</a>
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>Workshop Sentencias de control con
+                                    DevC++</td>
+                                <td>1ºros</td>
+                                <td>10:00 hrs.                            </td>
+                              </tr>
+                              <tr>
+                                <td>Workshop Aplicaciones Cloud con Red Hat
+                                    - OpenShift</td>
+                                <td>4ºtos</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Workshop Prototipos Web con WebFlow
+                                </td>
+                                <td>7ºmos</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                
+                    <div id="3" class="content">
+
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 3</a>
+                        
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Asisten</th>
+                                <th scope="col">Horario</th>
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>Concurso de videojuegos 
+                                </td>
+                                <td>Inscritos</td>
+                                <td>9:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Kahoot de Redes</td>
+                                <td>Inscritos</td>
+                                <td>10:00 hrs.</td>
+                              </tr>
+                              <tr>
+                                <td>Concurso de fotografía</td>
+                                <td>Inscritos</td>
+                                <td>12:00 hrs</td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+
+                <div id="Modal-programa">
+                  
+                  <div class="modal-content-pro">
+                      <iframe id="pdfContainer" src="img/CITNOVA.pdf" frameborder="0"></iframe>
+                      <a href="#actividades" class="btn btn-danger" id="close-pro">Cerrar Modal</a>
+                  </div>
+
+              </div>
+            </div>
+          </section>
+
 
 <section id="ponentes">
   <div class="baner">
@@ -330,40 +357,40 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2022 Universidad Tecnológica del Valle del Mezquital</p>
-    <br>
-    <p>Contacto</p>
-    <address>
-      Carretera Ixmiquilpan-Capula Km. 4<br>
-      El Nith, C.P. 42300,<br>
-      Ixmiquilpan, Hidalgo, México
-    </address>
-  </div>
-</footer>
+       <footer>
+        <div class="footer-content">
+          <p>&copy; 2022 Universidad Tecnológica del Valle del Mezquital</p>
+          <br>
+          <p>Contacto</p>
+          <address>
+            Carretera Ixmiquilpan-Capula Km. 4<br>
+            El Nith, C.P. 42300,<br>
+            Ixmiquilpan, Hidalgo, México
+          </address>
+        </div>
+      </footer>
 
-<script>
-var openModalBtn = document.getElementById('openModalBtn');
-var closeModalBtn = document.getElementById('closeModalBtn');
-var modal = document.getElementById('myModal');
+    
+      <script>
+        var openModalBtn = document.getElementById('openModalBtn');
+        var closeModalBtn = document.getElementById('closeModalBtn');
+        var modal = document.getElementById('myModal');
 
-openModalBtn.onclick = function()
-{
-  modal.style.display = 'block';
-};
-closeModalBtn.onclick = function()
-{
-  modal.style.display = 'none';
-};
-window.onclick = function(event)
-{
-  if (event.target === modal)
-  {
-    modal.style.display = 'none';
-  }
-};
-</script>
+        openModalBtn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+      </script>
+      
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
