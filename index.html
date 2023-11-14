@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles_index.css">
+    <link rel="stylesheet" href="styles2.css">
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="index.js"></script>
@@ -45,6 +45,7 @@
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
               </div>
           </div>
+
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="img/universidad-del-valle-del-mezuital.jpg">
@@ -71,7 +72,9 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <section id="actividades"></section>
+
+
+        <section id="actividades">
         <div class="baner">
             <h1 class="display-6">Actividades</h1>
           </div>
@@ -91,13 +94,8 @@
             
                 <div class="confes">
                     <div id="1" class="content">
-                        <a href="#actividades" id="open-pdf" class="btn btn-success">Descargar programa</a>
-                        <div id="pdf-modal" class="modal-pdf">
-                            <div class="modal-content">
-                                <iframe id="pdf-iframe" src="img/JornadaAcadémicaTI2021 (1).pdf"></iframe>
-                            </div>
-
-                        </div>
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 1</a>
+                       
                         <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
@@ -150,12 +148,9 @@
                     </div>
                 
                     <div id="2" class="content">
-                        <a href="#actividades" id="open-pdf" class="btn btn-success">Descargar programa</a>
-                        <div id="pdf-modal" class="modal-pdf">
-                            <div class="modal-content">
-                                <iframe id="pdf-iframe" src="documents/JornadaAcadémicaTI2021 (1).pdf"></iframe>
-                            </div>
-                        </div>
+
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 2</a>
+
                         <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
@@ -189,12 +184,9 @@
                     </div>
                 
                     <div id="3" class="content">
-                        <a href="#actividades" id="open-pdf" class="btn btn-success">Descargar programa</a>
-                        <div id="pdf-modal" class="modal-pdf">
-                            <div class="modal-content">
-                                <iframe id="pdf-iframe" src="img/JornadaAcadémicaTI2021 (1).pdf"></iframe>
-                            </div>
-                        </div>
+
+                      <a href="#actividades" class="openModalBtnPro">Abrir Modal con PDF 3</a>
+                        
                         <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
@@ -225,8 +217,19 @@
                           </table>
                     </div>
                 </div>
+
+                <div id="Modal-programa">
+                  
+                  <div class="modal-content-pro">
+                      <iframe id="pdfContainer" src="img/CITNOVA.pdf" frameborder="0"></iframe>
+                      <a href="#actividades" class="btn btn-danger" id="close-pro">Cerrar Modal</a>
+                  </div>
+
               </div>
+            </div>
           </section>
+
+
           <section id="ponentes">
             <div class="baner">
                 <h1 class="display-6">Ponentes</h1>
@@ -287,6 +290,7 @@
                 </div>
               </div>
            </section>
+
        <section id="talleres">
         <div class="baner">
             <h1 class="display-6">Convocatorias</h1>
@@ -331,6 +335,8 @@
               </div>
           </div>
        </section>
+
+      
        <section id="galeria">
         <div class="baner">
             <h1 class="display-6">Galería</h1>
@@ -338,6 +344,8 @@
           <br>
          <div class="content-galery">
             <h1 class="t-jor display-6"> 2017</h1>
+
+
             <section class="gallery-container">
                 <img src="img/1.jpeg" alt="Imagen 1">
                 <img src="img/2.jpeg" alt="Imagen 2">
@@ -346,12 +354,16 @@
                 <img src="img/5.jpeg" alt="Imagen 2">
                 <img src="img/6.jpeg" alt="Imagen 3">
             </section>
+
+
          </div>
         <div class="lightbox">
             <span class="close">&times;</span>
             <img class="lightbox-content" id="lightbox-img">
         </div>
        </section>
+
+
        <footer>
         <div class="footer-content">
           <p>&copy; 2022 Universidad Tecnológica del Valle del Mezquital</p>
@@ -364,6 +376,8 @@
           </address>
         </div>
       </footer>
+
+    
       <script>
         var openModalBtn = document.getElementById('openModalBtn');
         var closeModalBtn = document.getElementById('closeModalBtn');
@@ -388,7 +402,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-    const gallery = document.querySelector('.gallery-container');
+//galeria
+const gallery = document.querySelector('.gallery-container');
 const lightbox = document.querySelector('.lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.querySelector('.close');
@@ -411,22 +426,26 @@ lightbox.addEventListener('click', (e) => {
 });
 //galeria
 
-// Obtén elementos del DOM pdf
-const openPdfButton = document.getElementById('open-pdf');
-const pdfModal = document.getElementById('pdf-modal');
-const pdfIframe = document.getElementById('pdf-iframe');
+//modal convocatoria 
+var openModalBtns = document.getElementsByClassName('openModalBtnPro');
+        var closeModalBtn = document.getElementById('close-pro');
+        var modal = document.getElementById('Modal-programa');
 
-// Agrega un evento click al enlace para abrir el modal
-openPdfButton.addEventListener('click', () => {
-  pdfModal.style.display = 'block';
-});
+        for (var i = 0; i < openModalBtns.length; i++) {
+            openModalBtns[i].onclick = function() {
+                modal.style.display = 'block';
+            };
+        }
 
-// Agrega un evento click para cerrar el modal al hacer clic fuera del contenido
-pdfModal.addEventListener('click', (event) => {
-  if (event.target === pdfModal) {
-    pdfModal.style.display = 'none';
-  }
-});
+        closeModalBtn.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
 // Obtén elementos del DOM pdf-C
 const openPdfButtonC = document.getElementById('open-pdf-c');
 const pdfModalC = document.getElementById('pdf-modal-c');
@@ -443,6 +462,8 @@ pdfModalC.addEventListener('click', (event) => {
     pdfModalC.style.display = 'none';
   }
 })
+
+
 // Obtén elementos del DOM pdf-C
 const openButton = document.getElementById('open-modal');
 const ModalAct = document.getElementById('act-modal');
