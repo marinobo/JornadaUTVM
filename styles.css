@@ -647,20 +647,27 @@
     padding: 25px;
     border-radius: 5px;
 }
-.title-modal{
+
+.title-modal {
     background-color: #952d3d;
     color: #ffffff;
     justify-content: center;
     display: flex;
     box-shadow: 0 14px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.modal-content h2, h4{
+
+.modal-content h2, .modal-content h4 {
     color: #952d3d;
 }
 
 .modal-close {
     cursor: pointer;
 }
+@media screen and (max-width: 600px) {
+    .modal {
+        top: -170px;
+    }
+  }
   
   
   

@@ -103,7 +103,7 @@
             die("Conexión fallida: " . $conexion->connect_error);
         }
         // Realizar la consulta SQL con filtro para el campo "dia"
-        $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diauno'";
+        $sql = "SELECT id_actividad, nombre_actividad, asistentes,fecha, hora_actividad,lugar, ponente_coordinador, responsables FROM actividades WHERE dia = 'diauno'";
         $result = $conexion->query($sql);
         // Mostrar los resultados en la tabla
         if ($result->num_rows > 0) {
@@ -131,9 +131,10 @@
                 echo "<h2>Imparte:</h2>";
                 echo "<h3>{$row['ponente_coordinador']}</h3>";
                 echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['fecha']}</h3>";
                 echo "<h3>{$row['hora_actividad']}</h3>";
                 echo "<h2>Lugar:</h2>";
-                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h3>{$row['lugar']}</h3>";
                 echo "<h4>Responsables:</h4>";
                 echo "<h5> {$row['responsables']}</h5>";
                 echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
@@ -160,7 +161,7 @@
             die("Conexión fallida: " . $conexion->connect_error);
         }
         // Realizar la consulta SQL con filtro para el campo "dia"
-        $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diados'";
+        $sql = "SELECT id_actividad, nombre_actividad, asistentes,fecha, hora_actividad,lugar, ponente_coordinador, responsables FROM actividades WHERE dia = 'diados'";
         $result = $conexion->query($sql);
         // Mostrar los resultados en la tabla
         if ($result->num_rows > 0) {
@@ -188,9 +189,10 @@
                 echo "<h2>Imparte:</h2>";
                 echo "<h3>{$row['ponente_coordinador']}</h3>";
                 echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['fecha']}</h3>";
                 echo "<h3>{$row['hora_actividad']}</h3>";
                 echo "<h2>Lugar:</h2>";
-                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h3>{$row['lugar']}</h3>";
                 echo "<h4>Responsables:</h4>";
                 echo "<h5> {$row['responsables']}</h5>";
                 echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
@@ -217,7 +219,7 @@
             die("Conexión fallida: " . $conexion->connect_error);
         }
         // Realizar la consulta SQL con filtro para el campo "dia"
-        $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diatres'";
+        $sql = "SELECT id_actividad, nombre_actividad, asistentes,fecha, hora_actividad,lugar, ponente_coordinador, responsables FROM actividades WHERE dia = 'diatres'";
         $result = $conexion->query($sql);
         // Mostrar los resultados en la tabla
         if ($result->num_rows > 0) {
@@ -245,9 +247,10 @@
                 echo "<h2>Imparte:</h2>";
                 echo "<h3>{$row['ponente_coordinador']}</h3>";
                 echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['fecha']}</h3>";
                 echo "<h3>{$row['hora_actividad']}</h3>";
                 echo "<h2>Lugar:</h2>";
-                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h3>{$row['lugar']}</h3>";
                 echo "<h4>Responsables:</h4>";
                 echo "<h5> {$row['responsables']}</h5>";
                 echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
