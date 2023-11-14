@@ -104,7 +104,9 @@ include 'forms_convocatoria.php';
                     </select>
                     <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad">
                     <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º">
+                    <input type="date" name="fecha" id="fecha">
                     <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs.">
+                    <input type="text" name="lugarAct" id="lugarAct" placeholder="Lugar de la actividad">
                     <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad">
                     <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad">
                     <input type="submit" name="btnGuardarAct" value="Guardar">

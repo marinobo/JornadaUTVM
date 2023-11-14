@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btnGuardarAct'])) {
     $dia = $_POST['dia'];
     $nameAct = $_POST['nameAct'];
     $asist = $_POST['asist'];
+    $fecha = $_POST['fecha'];
     $horaAct = $_POST['horaAct'];
     $PonCord = $_POST['PonCord'];
     $ResAct = $_POST['ResAct'];

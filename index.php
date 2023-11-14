@@ -132,10 +132,15 @@
                 echo "<div class='modal-content'>";
                 echo " <div class='title-modal'><h1>{$row['nombre_actividad']}</h1>
                 </div>";
-                echo "<h2>Presenta:</h2>";
+                echo "<hr>";
+                echo "<h2>Imparte:</h2>";
                 echo "<h3>{$row['ponente_coordinador']}</h3>";
-                echo "<h2>Responsables:</h2>";
-                echo "<h3> {$row['responsables']}</h3>";
+                echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h2>Lugar:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h4>Responsables:</h4>";
+                echo "<h5> {$row['responsables']}</h5>";
                 echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
                 echo "</div>";
                 echo "</div>";
