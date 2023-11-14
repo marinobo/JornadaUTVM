@@ -52,8 +52,10 @@ if (!isset($_SESSION['usuario'])) {
 //forms
 include 'forms.php';
 include 'forms_ponentes.php';
+include 'forms_convocatoria.php';
 
 ?>
+
 
 <!--FORMULARIO-->
 <!DOCTYPE html>
@@ -65,9 +67,8 @@ include 'forms_ponentes.php';
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="../js/bootstrap.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <!-- Agrega esto en el head de tu documento -->
-
         <title>Administrador</title>
     </head>
     <body>
@@ -80,80 +81,81 @@ include 'forms_ponentes.php';
             </nav>
         </header>
         <main>
-            <section class="content">
-                <!-- Contenido del panel de administrador -->
-                <h3>Guardar un archivo en MySQL</h3>
-                <form method="post" action="" enctype="multipart/form-data">
-                    <input type="file" name="archivo" /><br/><br/>
-                    <input type="submit" name="btnGuardar" value="Guardar" />
-                </form>
-            </section>
-            <section class="content">
-    <div class="form-container">
-        <form method="post" action="" class="activity-form">
-            <h1>Actividades</h1>
-            <select class="form-act" name="dia" id="dia-act">
-                <option value="" selected disabled>Elige un día</option>
-                <option value="diauno">Día 1</option>
-                <option value="diados">Día 2</option>
-                <option value="diatres">Día 3</option>
-            </select>
 
-            <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad">
-
-            <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º">
-
-            <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs.">
-
-            <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad">
-
-            <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad">
-
-            <input type="submit" name="btnGuardarAct" value="Guardar">
-        </form>
-    </div>
-</section>
-
-            <section class="content">
-                <div class="form-container">
-                    <form method="post" action="" class="activity-form" enctype="multipart/form-data">
-                        <h1>Ponentes</h1>
-                        <input type="text" name="namePon" placeholder="Nombre del ponente">
-                        <input type="text" name="ocupPon" placeholder="Ocupación del ponente">
-                        <textarea name="desPon" placeholder="Descripción del ponente"></textarea>                        
-                        <input type="file" name="fotoPon">
-                        <input type="submit" name="btnGuardarPon" value="Guardar">
-                    </form>
-                </div>
-            </section>
-            <section class="content">
+        <!-- Contenido del panel de administrador -->
+        <section class="content">
+            <h3>Guardar un archivo en MySQL</h3>
+            <form method="post" action="" enctype="multipart/form-data">
+                <input type="file" name="archivo" /><br/><br/>
+                <input type="submit" name="btnGuardar" value="Guardar" />
+            </form>
+        </section>
+        
+        <!-- Contenido del panel de actividades -->
+        <section class="content">
             <div class="form-container">
                 <form method="post" action="" class="activity-form">
+                    <h1>Actividades</h1>
+                    <select class="form-act" name="dia" id="dia-act">
+                        <option value="" selected disabled>Elige un día</option>
+                        <option value="diauno">Día 1</option>
+                        <option value="diados">Día 2</option>
+                        <option value="diatres">Día 3</option>
+                    </select>
+                    <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad">
+                    <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º">
+                    <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs.">
+                    <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad">
+                    <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad">
+                    <input type="submit" name="btnGuardarAct" value="Guardar">
+                </form>
+            </div>
+        </section>
+        
+        <!-- Contenido del panel de ponentes -->
+        <section class="content">
+            <div class="form-container">
+                <form method="post" action="" class="activity-form" enctype="multipart/form-data">
+                    <h1>Ponentes</h1>
+                    <input type="text" name="namePon" placeholder="Nombre del ponente">
+                    <input type="text" name="ocupPon" placeholder="Ocupación del ponente">
+                    <textarea name="desPon" placeholder="Descripción del ponente"></textarea>                        
+                    <input type="file" name="fotoPon">
+                    <input type="submit" name="btnGuardarPon" value="Guardar">
+                </form>
+            </div>
+        </section>
+        
+        <!-- Contenido del panel de convocatorias -->
+        <section class="content">
+            <div class="form-container">
+                <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                     <h1>Convocarorias</h1>
                     <select class="form-con" name="tipo">
-                    <option value="">Elige el tipo de convocatoria</option>
+                        <option value="">Elige el tipo de convocatoria</option>
                         <option value="deportiva">Deportiva</option>
                         <option value="cultural">Cultural</option>
                         <option value="talleres">Taller</option>
                     </select>
-                    <input type="text" name="name-con" placeholder="Nombre de la convocatoria">
+                    <input type="text" name="nameCon" placeholder="Nombre de la convocatoria">
                     <input type="file" name="archivoCon" /><br/><br/>
                     <input type="submit" name="btnGuardarCon" value="Guardar">
                 </form>
             </div>
         </section>
-        </main>
-        
-        <footer>
-            <p>Administrador Jornada Academica © UTVM</p>
-        </footer>
-    </body>
-    <script>
-        //serrar sesion
-        document.getElementById("btnCerrarSesion").addEventListener("click", function() {
-            // Redirige al archivo PHP que cierra la sesión 
-             window.location.href = "cerrar_sesion.php";
-             });
+    
+    </main>
+    <footer>
+        <p>Administrador Jornada Academica © UTVM</p>
+    </footer>
+</body>
+
+<script>
+//serrar sesion
+document.getElementById("btnCerrarSesion").addEventListener("click", function() {
+    // Redirige al archivo PHP que cierra la sesión 
+    window.location.href = "cerrar_sesion.php";
+    });
 </script>
 </html>
 
