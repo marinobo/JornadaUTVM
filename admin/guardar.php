@@ -3,7 +3,6 @@
 //verifica si se ha hecho clic en el boton guardar
 if(filter_input(INPUT_POST, 'btnGuardar'))
 {
-    
     /*propiedades del archivo*/
     $archivo_nombre=$_FILES['archivo']['name'];
     $archivo_tipo = $_FILES['archivo']['type'];
@@ -16,39 +15,42 @@ if(filter_input(INPUT_POST, 'btnGuardar'))
     $archivo_binario = (file_get_contents($archivo_temp));
     
     /* preparamos la sentencia sql
-		* declarado unos paramentros en la sentencia sql (?)
-		* recibiran valores desde el bind_param.
-  */
-
-$sql = "INSERT INTO ARCHIVOS (NOMBRE, TIPO, ARCHIVO) VALUES (?, ?, ?)";	
-$stmt = mysqli_prepare($conn, $sql);
-$stmt->bind_param('sss', $archivo_nombre, $archivo_tipo, $archivo_binario);
-
-//ejecutamos la sentencia
-if (mysqli_stmt_execute($stmt)) {
-    $ultimoId = mysqli_stmt_insert_id($stmt);
-    echo "<script>
-            alert('Se ha guardado el archivo en la base de datos con éxito. Último id insertado: $ultimoId');
-            window.location.href='guardar.php?';
-          </script>";
-} else {
-    echo "<script>
-            alert('Ocurrió un problema al guardar su archivo. " . mysqli_stmt_error($stmt) . "');
-          </script>";
+    * declarado unos paramentros en la sentencia sql (?)
+    * recibiran valores desde el bind_param.
+    */
+    
+    $sql = "INSERT INTO ARCHIVOS (NOMBRE, TIPO, ARCHIVO) VALUES (?, ?, ?)";	
+    $stmt = mysqli_prepare($conn, $sql);
+    $stmt->bind_param('sss', $archivo_nombre, $archivo_tipo, $archivo_binario);
+    
+    //ejecutamos la sentencia
+    if (mysqli_stmt_execute($stmt))
+    {
+        $ultimoId = mysqli_stmt_insert_id($stmt);
+        echo "<script>
+        alert('Se ha guardado el archivo en la base de datos con éxito. Último id insertado: $ultimoId');
+        window.location.href='guardar.php?';
+        </script>";
+    } else
+    {
+        echo "<script>
+        alert('Ocurrió un problema al guardar su archivo. " . mysqli_stmt_error($stmt) . "');
+        </script>";
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 
-
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
-}
 session_start();
-
 // Verifica si la variable de sesión está configurada
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['usuario']))
+{
     // Si no está configurada, redirige a la página de inicio de sesión
     header("Location: index.php");
     exit();
 }
+
 //forms
 include 'forms.php';
 include 'forms_ponentes.php';

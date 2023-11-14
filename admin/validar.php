@@ -11,9 +11,11 @@ $resultado=mysqli_query($conexion, $consulta);
 
 $filas=mysqli_num_rows($resultado);
 
-if ($filas) {
+if ($filas)
+{
     header("location:guardar.php");
-}else {
+}else
+{
     ?>
     <?php
     include("index.php");

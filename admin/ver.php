@@ -2,7 +2,8 @@
 
 //obtener el id de la imagen
 $id=  filter_input(INPUT_GET, 'id');
-if($id==''){
+if($id=='')
+{
     die ("No tenemos el id");
 }
 
@@ -15,7 +16,8 @@ $sql="SELECT ARCHIVO, TIPO, NOMBRE FROM ARCHIVOS WHERE ID = $id";
 //ejecutar la sentencia sql
 $resultado = mysqli_query($conn, $sql) or die("Error: no se pudo hacer la consulta.");
 
-while($row = mysqli_fetch_array($resultado)){
+while($row = mysqli_fetch_array($resultado))
+{
     $archivo= $row[0]; //obtener el archivo
     $tipo=$row[1]; //obtener el tipo de archivo
     $nombre=$row[2]; //obtener el nombre del archivo
