@@ -96,18 +96,15 @@
                     <div id="1" class="content">
                       <a href="#actividades" class="openModalBtnPro btn btn-success">Descargar programa</a>
                        
-                      <?php
+  <?php
         include 'admin/db.php';
-
         // Verificar la conexión
         if ($conexion->connect_error) {
             die("Conexión fallida: " . $conexion->connect_error);
         }
-
         // Realizar la consulta SQL con filtro para el campo "dia"
         $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diauno'";
         $result = $conexion->query($sql);
-
         // Mostrar los resultados en la tabla
         if ($result->num_rows > 0) {
             echo "<table class='table table-striped table-bordered'>";
@@ -119,34 +116,35 @@
             echo "</tr>";
             echo "</thead>";
             echo "<tbody class='table-group-divider'>";
-
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td><a href='#actividades' class='openModalBtnCont' onclick='openModal(\"myModalCont{$row['id_actividad']}\")'>" . $row["nombre_actividad"] . "</a></td>";
                 echo "<td>" . $row["asistentes"] . "</td>";
                 echo "<td>" . $row["hora_actividad"] . "</td>";
                 echo "</tr>";
-
                 // Crear modal para cada actividad
                 echo "<div id='myModalCont{$row['id_actividad']}' class='modal'>";
                 echo "<div class='modal-content'>";
                 echo " <div class='title-modal'><h1>{$row['nombre_actividad']}</h1>
                 </div>";
-                echo "<h2>Presenta:</h2>";
+                echo "<hr>";
+                echo "<h2>Imparte:</h2>";
                 echo "<h3>{$row['ponente_coordinador']}</h3>";
-                echo "<h2>Responsables:</h2>";
-                echo "<h3> {$row['responsables']}</h3>";
+                echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h2>Lugar:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h4>Responsables:</h4>";
+                echo "<h5> {$row['responsables']}</h5>";
                 echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
                 echo "</div>";
                 echo "</div>";
             }
-
             echo "</tbody>";
             echo "</table>";
         } else {
             echo "<p>No hay resultados para 'diauno'</p>";
         }
-
         // Cerrar la conexión
         $conexion->close();
         ?>
@@ -155,103 +153,115 @@
                     <div id="2" class="content">
 
                       <a href="#actividades" class="openModalBtnPro btn btn-success">Descargar programa</a>
-
-                      <table class="table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Actividad</th>
-                            <th scope="col">Asisten</th>
-                            <th scope="col">Horario</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                          <tr>
-                            <td>
-                              <a href="#actividades"  class="openModalBtnCont2">Conferencia
-                              IoT</a> </td>
-                            
-                            <td>1ºy 4º</td>
-                            <td>9:00 hrs.</td>
-                          </tr>   
-                          <tr>
-                            <td>
-                              <a href="#actividades" class="openModalBtnCont2"> Magistral
-                              IoT</a> </td>
-                            
-                            <td>1ºy 4º</td>
-                            <td>9:00 hrs.</td>
-                          </tr>  
-                        </tbody>
-                        <div id="myModalCont2">
-                          <div class="modal-content-Cont2">
-                            <div class="ModalTitle baner">   
-                              <h1>Conferencia Magistral
-                                IoT</h1>
-                            </div>
-                          
-                            <div class="Modal-des ">
-                              <h2>Presenta: </h2>
-                              <h3>Mtro. Jorge
-                                Vega</h3>
-                                <h3>CISCO</h3>
-                                <h2> Presenta y entrega reconocimiento</h2>
-                              <h3>Mtro. Cuitláhuac Alamilla Cintora</h3>
-                            </div>
-                            <a href="#actividades" class="closeModalBtnCont2 btn btn-danger">Cerrar</a>
-                          </div>
-                      </div>
-                      </table>
+                      <?php
+        include 'admin/db.php';
+        // Verificar la conexión
+        if ($conexion->connect_error) {
+            die("Conexión fallida: " . $conexion->connect_error);
+        }
+        // Realizar la consulta SQL con filtro para el campo "dia"
+        $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diados'";
+        $result = $conexion->query($sql);
+        // Mostrar los resultados en la tabla
+        if ($result->num_rows > 0) {
+            echo "<table class='table table-striped table-bordered'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th scope='col'>Actividad</th>";
+            echo "<th scope='col'>Asisten</th>";
+            echo "<th scope='col'>Horario</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody class='table-group-divider'>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><a href='#actividades' class='openModalBtnCont' onclick='openModal(\"myModalCont{$row['id_actividad']}\")'>" . $row["nombre_actividad"] . "</a></td>";
+                echo "<td>" . $row["asistentes"] . "</td>";
+                echo "<td>" . $row["hora_actividad"] . "</td>";
+                echo "</tr>";
+                // Crear modal para cada actividad
+                echo "<div id='myModalCont{$row['id_actividad']}' class='modal'>";
+                echo "<div class='modal-content'>";
+                echo " <div class='title-modal'><h1>{$row['nombre_actividad']}</h1>
+                </div>";
+                echo "<hr>";
+                echo "<h2>Imparte:</h2>";
+                echo "<h3>{$row['ponente_coordinador']}</h3>";
+                echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h2>Lugar:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h4>Responsables:</h4>";
+                echo "<h5> {$row['responsables']}</h5>";
+                echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
+                echo "</div>";
+                echo "</div>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+        } else {
+            echo "<p>No hay resultados para 'dia dos'</p>";
+        }
+        // Cerrar la conexión
+        $conexion->close();
+        ?>
                     </div>
                 
                     <div id="3" class="content">
 
                       <a href="#actividades" class="openModalBtnPro btn btn-success">Descargar programa</a>
-                      <table class="table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Actividad</th>
-                            <th scope="col">Asisten</th>
-                            <th scope="col">Horario</th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                          <tr>
-                            <td>
-                              <a href="#actividades"  class="openModalBtnCont3">Conferencia Magistral
-                              IoT</a> </td>
-                            
-                            <td>1ºy 4º</td>
-                            <td>9:00 hrs.</td>
-                          </tr>   
-                          <tr>
-                            <td>
-                              <a href="#actividades" class="openModalBtnCont3">Conferencia Magistral
-                              IoT</a> </td>
-                            
-                            <td>1ºy 4º</td>
-                            <td>9:00 hrs.</td>
-                          </tr>  
-                        </tbody>
-                        <div id="myModalCont3">
-                          <div class="modal-content-Cont3">
-                            <div class="ModalTitle baner">   
-                              <h1>Conferencia Magistral
-                                IoT</h1>
-                            </div>
-                          
-                            <div class="Modal-des ">
-                              <h2>Presenta: </h2>
-                              <h3>Mtro. Jorge Ramíro Alvarado de la
-                                Vega</h3>
-                                <h3>Academy Support Center CISCO</h3>
-                                <h2> Presenta y entrega reconocimiento</h2>
-                              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nemo dolorum mollitia, ad ut et vel architecto sunt laudantium inventore laborum ipsum, culpa eos suscipit tempore, molestias voluptatum excepturi eligendi.a</h3>
-                            </div>
-                            <a href="#actividades" class="closeModalBtnCont3 btn btn-danger">Cerrar</a>
-                          </div>
-                      </div>
-                      </table>
-                    
+                      <?php
+        include 'admin/db.php';
+        // Verificar la conexión
+        if ($conexion->connect_error) {
+            die("Conexión fallida: " . $conexion->connect_error);
+        }
+        // Realizar la consulta SQL con filtro para el campo "dia"
+        $sql = "SELECT id_actividad, nombre_actividad, asistentes, hora_actividad, ponente_coordinador, responsables FROM actividades WHERE dia = 'diatres'";
+        $result = $conexion->query($sql);
+        // Mostrar los resultados en la tabla
+        if ($result->num_rows > 0) {
+            echo "<table class='table table-striped table-bordered'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th scope='col'>Actividad</th>";
+            echo "<th scope='col'>Asisten</th>";
+            echo "<th scope='col'>Horario</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody class='table-group-divider'>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><a href='#actividades' class='openModalBtnCont' onclick='openModal(\"myModalCont{$row['id_actividad']}\")'>" . $row["nombre_actividad"] . "</a></td>";
+                echo "<td>" . $row["asistentes"] . "</td>";
+                echo "<td>" . $row["hora_actividad"] . "</td>";
+                echo "</tr>";
+                // Crear modal para cada actividad
+                echo "<div id='myModalCont{$row['id_actividad']}' class='modal'>";
+                echo "<div class='modal-content'>";
+                echo " <div class='title-modal'><h1>{$row['nombre_actividad']}</h1>
+                </div>";
+                echo "<hr>";
+                echo "<h2>Imparte:</h2>";
+                echo "<h3>{$row['ponente_coordinador']}</h3>";
+                echo "<h2>Fecha y hora:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h2>Lugar:</h2>";
+                echo "<h3>{$row['hora_actividad']}</h3>";
+                echo "<h4>Responsables:</h4>";
+                echo "<h5> {$row['responsables']}</h5>";
+                echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_actividad']}\")'>Cerrar</button>";
+                echo "</div>";
+                echo "</div>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+        } else {
+            echo "<p>No hay resultados para 'dia tres'</p>";
+        }
+        // Cerrar la conexión
+        $conexion->close();
+        ?>
                         
                         
                     </div>
@@ -419,73 +429,20 @@
     
       <script>
 
-       // Obtén todos los elementos con la clase 'openModalBtnCont' de la tabla dia uno
-    var openModalBtnConts = document.querySelectorAll('.openModalBtnCont');
-    var closeModalBtnCont = document.querySelector('.closeModalBtnCont');
-    var modalCont = document.getElementById('myModalCont');
+function openModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+    }
 
-    // Agrega un evento click a cada botón
-    openModalBtnConts.forEach(function (btn) {
-        btn.onclick = function () {
-            modalCont.style.display = 'flex';
-        };
-    });
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
 
-    closeModalBtnCont.onclick = function () {
-        modalCont.style.display = 'none';
-    };
-
+    // Cerrar el modal haciendo clic fuera de él
     window.onclick = function (event) {
-        if (event.target === modalCont) {
-            modalCont.style.display = 'none';
+        if (event.target.className === 'modal') {
+            event.target.style.display = "none";
         }
-    };
-
-
-       // Obtén todos los elementos con la clase 'openModalBtnCont' de la tabla dia dos
-       var openModalBtnConts2 = document.querySelectorAll('.openModalBtnCont2');
-       var closeModalBtnCont2 = document.querySelector('.closeModalBtnCont2');
-       var modalCont2 = document.getElementById('myModalCont2');
-   
-       // Agrega un evento click a cada botón
-       openModalBtnConts2.forEach(function (btn) {
-           btn.onclick = function () {
-               modalCont2.style.display = 'flex';
-           };
-       });
-   
-       closeModalBtnCont2.onclick = function () {
-           modalCont2.style.display = 'none';
-       };
-   
-       window.onclick = function (event) {
-           if (event.target === modalCont2) {
-               modalCont2.style.display = 'none';
-           }
-       };
-
-
-       // Obtén todos los elementos con la clase 'openModalBtnCont' de la tabla dia tres
-       var openModalBtnConts3 = document.querySelectorAll('.openModalBtnCont3');
-       var closeModalBtnCont3 = document.querySelector('.closeModalBtnCont3');
-       var modalCont3 = document.getElementById('myModalCont3');
-   
-       // Agrega un evento click a cada botón
-       openModalBtnConts3.forEach(function (btn) {
-           btn.onclick = function () {
-               modalCont3.style.display = 'flex';
-           };
-       });
-   
-       closeModalBtnCont3.onclick = function () {
-           modalCont3.style.display = 'none';
-       };
-   
-       window.onclick = function (event) {
-           if (event.target === modalCont3) {
-               modalCont3.style.display = 'none';
-           }
-       };
+    }
       </script>
       
 </body>
