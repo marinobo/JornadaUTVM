@@ -393,8 +393,9 @@ if (mysqli_num_rows($resultado) > 0) {
         if ($tipo_convocatoria == "deportiva") {
             $tarjeta = "
                 <div class='card'>
-                    <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
-                    <div class='name_p'>
+                <div class='image'>
+                <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
+                </div>                     <div class='name_p'>
                         <h2>$nombre_convocatoria</h2>
                     </div>
                     <p>$descripcion_convocatoria</p>
@@ -461,8 +462,9 @@ if (mysqli_num_rows($resultado) > 0) {
         if ($tipo_convocatoria == "cultural") {
             $tarjeta = "
                 <div class='card'>
-                    <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
-                    <div class='name_p'>
+                <div class='image'>
+                <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
+                </div>                     <div class='name_p'>
                         <h2>$nombre_convocatoria</h2>
                     </div>
                     <p>$descripcion_convocatoria</p>
@@ -529,8 +531,9 @@ if (mysqli_num_rows($resultado) > 0) {
         if ($tipo_convocatoria == "talleres") {
             $tarjeta = "
                 <div class='card'>
-                    <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
-                    <div class='name_p'>
+                <div class='image'>
+                <img src='data:image/png;base64," . base64_encode($foto_convocatoria_binario) . "' alt='Imagen 1'>
+                </div>                     <div class='name_p'>
                         <h2>$nombre_convocatoria</h2>
                     </div>
                     <p>$descripcion_convocatoria</p>
