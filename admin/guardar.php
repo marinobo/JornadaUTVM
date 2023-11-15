@@ -87,11 +87,11 @@ include 'forms_convocatoria.php';
         <main>
 
         <!-- Contenido del panel de administrador -->
-        <section class="content">
+        <section class="content section-archivo">
             <div class="form-container">
-                <h1>Guardar un archivo en MySQL</h1>
-                <form method="post" action="" enctype="multipart/form-data">
-                    <input type="file" name="archivo" /><br/><br/>
+                <form method="post" action="" class="activity-form" enctype="multipart/form-data">
+                    <h1>Guardar un archivo en MySQL</h1>
+                    <input type="file" name="archivo" required/><br/><br/>
                     <input type="submit" name="btnGuardar" value="Guardar" />
                 </form>
             </div>
