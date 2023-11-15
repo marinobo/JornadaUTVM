@@ -65,6 +65,7 @@ include 'forms_convocatoria.php';
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="style_forms.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -76,29 +77,50 @@ include 'forms_convocatoria.php';
         <title>Administrador</title>
     </head>
     <body>
+        
         <header>
+        <img src="../img/b.jpg" id="logo" alt="header" width="100%">
+
             <h1>Panel de Administrador</h1>
-            <nav>
+            
+        </header>
+        <nav class="nav">
                 <ul>
                     <button id="btnCerrarSesion" class="btn btn-primary">Cerrar Sesión</button>
                 </ul>
             </nav>
-        </header>
+            
         <main>
-
+        <div class="seccion1">
+                <div class="link-row">
+                    <a  onclick="openContent(event, '7');">
+                        <div class="tablink">Programa</div>
+                    </a>
+                    <a onclick="openContent(event, '8');">
+                        <div class="tablink">Actividades</div>
+                    </a>
+                    <a  onclick="openContent(event, '9');">
+                        <div class="tablink">Ponentes</div>
+                    </a>
+                    <a  onclick="openContent(event, '10');">
+                        <div class="tablink">Convocatorias</div>
+                    </a>
+                </div>
+            
         <!-- Contenido del panel de administrador -->
-        <section class="content section-archivo">
+        <section id="7" class="content">
             <div class="form-container">
                 <form method="post" action="" class="activity-form" enctype="multipart/form-data">
-                    <h1>Guardar un archivo en MySQL</h1>
-                    <input type="file" name="archivo" required/><br/><br/>
+                    <h1>Guardar programa</h1>
+                    <label for="archivoCon">Seleccione un archivo PDF no mayor a 3 MB</label>
+                    <input type="file" name="archivo" requiredaccept=".pdf" onchange="validateFile(this)"/><br/><br/>
                     <input type="submit" name="btnGuardar" value="Guardar" />
                 </form>
             </div>
         </section>
         
         <!-- Contenido del panel de actividades -->
-        <section class="content">
+        <section id="8" class="content">
             <div class="form-container">
                 <form method="post" action="" class="activity-form">
                     <h1>Actividades</h1>
@@ -121,21 +143,22 @@ include 'forms_convocatoria.php';
         </section>
         
         <!-- Contenido del panel de ponentes -->
-        <section class="content">
+        <section id="9" class="content">
             <div class="form-container">
                 <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                     <h1>Ponentes</h1>
                     <input type="text" name="namePon" placeholder="Nombre del ponente" required>
                     <input type="text" name="ocupPon" placeholder="Ocupación del ponente" required>
-                    <textarea name="desPon" placeholder="Descripción del ponente" required></textarea>                        
-                    <input type="file" name="fotoPon" required>
+                    <textarea name="desPon" placeholder="Descripción del ponente" required></textarea>
+                    <label for="fotoCon">Seleccione una imagen (jpg, jpeg, png) no mayor a 3 MB</label>                        
+                    <input type="file" name="fotoPon" required required accept=".jpg, .jpeg, .png" onchange="validateFile(this)">
                     <input type="submit" name="btnGuardarPon" value="Guardar">
                 </form>
             </div>
         </section>
-        
+    
         <!-- Contenido del panel de convocatorias -->
-        <section class="content">
+        <section id="10" class="content">
             <div class="form-container">
                 <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                     <h1>Convocarorias</h1>
@@ -155,8 +178,9 @@ include 'forms_convocatoria.php';
                 </form>
             </div>
         </section>
-    
+      
     </main>
+    </div> 
     <footer>
         <p>Administrador Jornada Academica © UTVM</p>
     </footer>
@@ -168,6 +192,22 @@ document.getElementById("btnCerrarSesion").addEventListener("click", function() 
     // Redirige al archivo PHP que cierra la sesión 
     window.location.href = "cerrar_sesion.php";
     });
+
+///tab
+function openContent(evt, contentName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("content");
+      for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+          tablinks[i].classList.remove("tablink-active"); // Elimina la clase de la pestaña activa actual
+      }
+      document.getElementById(contentName).style.display = "block";
+      evt.currentTarget.firstElementChild.classList.add("tablink-active"); // Agrega la clase a la pestaña activa
+  }
+  
 </script>
 </html>
 

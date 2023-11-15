@@ -11,7 +11,13 @@ header {
     text-align: center;
     padding: 20px 0;
 }
-
+nav {
+    background-color: #952d3d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 60px;
+  }
 nav ul {
     list-style: none;
     padding: 0;
@@ -28,14 +34,11 @@ nav a {
     color: #fff;
 }
 
-.section-archivo{
-    display: none;
-}
+
 
 
 
 .content {
-    border: 1px solid #952d3d;
     padding: 20px;
 }
 
@@ -89,3 +92,45 @@ footer {
 .activity-form input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+/*tabs*/
+.link-row{
+    background-color: #39ab57;
+    font-family: Arial;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tablink {
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    .tablink {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+.confes{
+        display: flex;
+        justify-content: center;
+        color: #000000;
+}
+  .link-row a {
+    text-decoration: none;
+    padding: 10px;
+    width: 400px;
+    border-radius: 5%;
+  }
+  .tablink-active {
+  border-bottom: thick solid;
+  }
+  
+  .content {
+    display: none;
+  }
