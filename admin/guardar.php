@@ -86,7 +86,7 @@ include 'forms_convocatoria.php';
         </header>
         <nav class="nav">
                 <ul>
-                    <button id="btnCerrarSesion" class="btn btn-primary">Cerrar Sesión</button>
+                    <button id="btnCerrarSesion" class="btn btn-success">Cerrar Sesión</button>
                 </ul>
             </nav>
             
