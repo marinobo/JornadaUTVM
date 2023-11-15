@@ -88,11 +88,13 @@ include 'forms_convocatoria.php';
 
         <!-- Contenido del panel de administrador -->
         <section class="content">
-            <h3>Guardar un archivo en MySQL</h3>
-            <form method="post" action="" enctype="multipart/form-data">
-                <input type="file" name="archivo" /><br/><br/>
-                <input type="submit" name="btnGuardar" value="Guardar" />
-            </form>
+            <div class="form-container">
+                <h1>Guardar un archivo en MySQL</h1>
+                <form method="post" action="" enctype="multipart/form-data">
+                    <input type="file" name="archivo" /><br/><br/>
+                    <input type="submit" name="btnGuardar" value="Guardar" />
+                </form>
+            </div>
         </section>
         
         <!-- Contenido del panel de actividades -->
@@ -100,19 +102,19 @@ include 'forms_convocatoria.php';
             <div class="form-container">
                 <form method="post" action="" class="activity-form">
                     <h1>Actividades</h1>
-                    <select class="form-act" name="dia" id="dia-act">
+                    <select class="form-act" name="dia" id="dia-act" required>
                         <option value="" selected disabled>Elige un día</option>
                         <option value="diauno">Día 1</option>
                         <option value="diados">Día 2</option>
                         <option value="diatres">Día 3</option>
                     </select>
-                    <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad">
-                    <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º">
-                    <input type="date" name="fecha" id="fecha">
-                    <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs.">
-                    <input type="text" name="lugarAct" id="lugarAct" placeholder="Lugar de la actividad">
-                    <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad">
-                    <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad">
+                    <input type="text" name="nameAct" id="nameAct" placeholder="Nombre de la actividad" required>
+                    <input type="text" name="asist" id="asist" placeholder="Asistentes, ej: 1º y 4º" required>
+                    <input type="date" name="fecha" id="fecha" required>
+                    <input type="text" name="horaAct" id="horaAct" placeholder="Hora de la actividad, ej: 9:00 hrs." required>
+                    <input type="text" name="lugarAct" id="lugarAct" placeholder="Lugar de la actividad" required>
+                    <input type="text" name="PonCord" id="PonCord" placeholder="Nombre del ponente o coordinador de la actividad" required>
+                    <input type="text" name="ResAct" id="ResAct" placeholder="Responsables de la actividad" required>
                     <input type="submit" name="btnGuardarAct" value="Guardar">
                 </form>
             </div>
@@ -123,10 +125,10 @@ include 'forms_convocatoria.php';
             <div class="form-container">
                 <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                     <h1>Ponentes</h1>
-                    <input type="text" name="namePon" placeholder="Nombre del ponente">
-                    <input type="text" name="ocupPon" placeholder="Ocupación del ponente">
-                    <textarea name="desPon" placeholder="Descripción del ponente"></textarea>                        
-                    <input type="file" name="fotoPon">
+                    <input type="text" name="namePon" placeholder="Nombre del ponente" required>
+                    <input type="text" name="ocupPon" placeholder="Ocupación del ponente" required>
+                    <textarea name="desPon" placeholder="Descripción del ponente" required></textarea>                        
+                    <input type="file" name="fotoPon" required>
                     <input type="submit" name="btnGuardarPon" value="Guardar">
                 </form>
             </div>
