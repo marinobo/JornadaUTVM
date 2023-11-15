@@ -311,10 +311,10 @@ if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
 
-      $foto = $row ['foto_ponente'];        
-      echo "<div class='card'>";
-      echo"<div class='image'>";
-      echo"<div class='image'>";
+        $foto = $row ['foto_ponente'];        
+        echo "<div class='card'>";
+        echo"<div class='image'>";
+        echo"<div class='image'>";
         echo"<img src='data:image/png;base64," . base64_encode($foto) . "' alt='Imagen_ponente'>";
         echo"</div>";
         echo"</div>";
