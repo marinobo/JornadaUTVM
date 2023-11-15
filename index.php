@@ -319,12 +319,23 @@ if ($result->num_rows > 0) {
         echo"</div>";
         echo"</div>";
         echo"<div class='name_p'>";
-        echo"<a href='#ponentes'>{$row['nombre_ponente']}</a>";
+        echo"<a href='#ponente' class='openModalBtnCont' onclick='openModal(\"myModalCont{$row['id_ponente']}\")'>" . $row["nombre_ponente"] . "</a>";
         echo" </div>";
         echo"<p>{$row['ocupacion_ponente']}</p>";
         echo" </div> ";
 
-      
+        // Crear modal para cada actividad
+        echo "<div id='myModalCont{$row['id_ponente']}' class='modal'>";
+        echo "<div class='modal-content'>";
+        echo " <div class='title-modal'><h1>{$row['nombre_ponente']}</h1></div>";
+        echo "<hr>";
+        echo "<h2>Imparte:</h2>";
+        echo "<h3>{$row['ocupacion_ponente']}</h3>";
+        echo "<h4>Responsables:</h4>";
+        echo "<h5> {$row['descripcion_ponente']}</h5>";
+        echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_ponente']}\")'>Cerrar</button>";
+        echo "</div>";
+        echo "</div>";
     }
 
     echo "</tbody>";
