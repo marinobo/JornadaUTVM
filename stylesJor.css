@@ -1,0 +1,702 @@
+*{
+    font-family: 'Numans', sans-serif;
+  }
+  body{
+      margin: 0;
+      font-size: 20px;
+      background: rgb(255, 255, 255);
+      
+    }
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+      bottom: 3rem;
+    }
+    
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+      height: 32rem;
+      
+     
+    }
+    .carousel-item > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 32rem;
+      
+    }
+    .featurette-divider {
+      margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    }
+    
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-weight: 300;
+      line-height: 1;
+      /* rtl:remove */
+      letter-spacing: -.05rem;
+    }
+    
+    .featurette-divider {
+      margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    }
+    
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-weight: 300;
+      line-height: 1;
+      /* rtl:remove */
+      letter-spacing: -.05rem;
+    }
+    /* Aplicar fondo oscuro semi-transparente a las imágenes del carrusel */
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    }
+    
+    /* Asegurar que el contenido de la diapositiva esté por encima del fondo oscuro */
+    .carousel-caption {
+      position: relative;
+      color: #fff; /* Color de texto en la diapositiva */
+    }
+    
+    /* Ajustar el color del texto en los indicadores */
+    .carousel-indicators {
+      color: #fff;
+    }
+    .top-container {
+      background-position: center;
+      text-align: center;
+      padding: 100px;
+      font-family: arial;/*fuente de texto*/
+    }
+    #logo {
+      display: flex;
+      position: relative;
+      margin: 0;
+      max-width: 100%; /* Cambia el ancho máximo al 100% para que la imagen sea responsive */
+      height: auto; /* Ajusta la altura automáticamente para mantener la relación de aspecto */
+    }
+    
+    .titulo{
+      color: #f1f1f1;
+      font-family:Arial;
+      
+    }
+    .header {
+      display: grid;
+      place-content: center;
+      padding: 10px 16px;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    
+    .content {
+      padding: 16px;
+    }
+    
+   
+    /*----*/
+    .baner{
+      /*margin-top: -70px;*/
+      background-color: #952d3d;
+      color: #ffffff;
+      justify-content: center;
+      display: flex;
+      box-shadow: 0 14px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+   
+    /*tabs*/
+    .link-row{
+      background-color: #39ab57;
+      font-family: Arial;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .tablink {
+      padding: 10px 20px;
+      margin: 5px;
+      text-align: center;
+      color: #fff;
+      border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+      .tablink {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+  .confes{
+          display: flex;
+          justify-content: center;
+          color: #000000;
+  }
+    .link-row a {
+      text-decoration: none;
+      padding: 10px;
+      width: 400px;
+      border-radius: 5%;
+    }
+    .tablink-active {
+    border-bottom: thick solid;
+    }
+    
+    .content {
+      display: none;
+    }
+    thead {
+        background-color: #d1a169;
+        color: #ffffff;
+    }
+
+    tbody {
+        background-color: #ffffff;
+    }
+
+    .content {
+        flex: 1;
+        margin: 10px;
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        text-align: left;
+        word-wrap: break-word; /* Agrega esta línea para manejar textos largos */
+    }
+
+    table th {
+        font-size: xx-large;
+    }
+
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        table td {
+            padding: 5px;
+            font-size: 12px;
+        }
+
+        table th {
+            padding: 5px;
+            font-size: 15px;
+        }
+    }
+    
+    /*cards*/
+    .seccion {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .card {
+      width: 300px;
+      margin: 10px;
+      text-align: center;
+      color:#ffff;
+      border-radius: 5%;
+      background-color: #d7a770;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid transparent;
+      overflow: hidden;
+    }
+    .image {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .image img {
+      width: 500px; /* Ajusta el ancho máximo de la imagen */
+      height: 200px; 
+      object-fit: cover;
+    }
+     .name_p{
+      background-color: #952d3d;
+     }
+    
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+  /*galeria*/
+    .galeria {
+      width: 90%;
+      margin: auto;
+      list-style: none;
+      padding: 20px;
+      box-sizing: border-box;
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  }
+  
+  .galeria li {
+      margin: 5px;
+  }
+  
+  .galeria img {
+      width: 500px;
+      height:200px;
+  }
+  .t-jor{
+      color: #952d3d;
+      border-radius: 5%;
+  }
+  /*Estilos del modal*/
+  
+  .modal {
+      display: none;
+  }
+  
+  .modal:target {
+      
+      display: block;
+      position: fixed;
+      background: rgba(0,0,0,0.8);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  
+  
+  .imagen {
+      width: 100%;
+      height: 50%;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .imagen a {
+      color: #fff;
+      font-size: 70px;
+      text-decoration: none;
+      margin: 0 10px;
+  }
+  
+  .imagen a:nth-child(2) {
+      margin: 0;
+      height: 100%;
+      flex-shrink: 2;
+  }
+  
+  .imagen img {
+      width: 500px;
+      height: 100%;
+      max-width: 100%;
+      border: 2px solid #fff;
+      box-sizing: border-box;
+  }
+  
+  .cerrar {
+      display: block;
+      background: #952d3d;
+      width: 100px;
+      margin: 15px auto;
+      text-align: center;
+      text-decoration: none;
+      font-size: 25px;
+      padding: 5px;
+      line-height: 25px;
+    color: #ffffff;
+    border-radius: 5%;
+  }
+  /*modal programa*/
+  #Modal-programa {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.modal-content-pro {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#pdfContainer {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-content-pro {
+        width: 90%; /* Ajustado para dispositivos muy pequeños */
+        max-width: 90%; /* Limita el ancho máximo */
+    }
+
+    #pdfContainer {
+        width: 100%;
+        height: 100%;
+    }
+
+    
+}
+
+
+
+
+  /* Estilos de galería */
+  .content-galery {
+      display: flex;
+      top: 0;
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente */
+      height: 100vh; /* Ajusta la altura según tus necesidades */
+    }
+  .gallery-container{
+      display: flex;
+      width: 1000px;
+      height: 430px;
+  }
+   
+  .gallery-container img{
+      width: 0px;
+      flex-grow: 1;
+      object-fit: cover;
+      opacity: .8;
+      transition: .5s ease;
+  }
+  
+  .gallery-container img:hover{
+      cursor: crosshair;
+      width: 300px;
+      opacity: 1;
+      filter: contrast(120%);
+  }
+    /* Media queries para hacer que la galería sea responsive */
+  @media (max-width: 768px) {
+      .gallery-container{
+          display: flex;
+          width: 300px;
+          height: 430px;
+      }
+      .lightbox-content {
+          max-width: 90%; /* Ajustar el tamaño del visor de imágenes en dispositivos pequeños */
+      }
+  }
+  /*modal-pdf */
+  .modal-pdf-c {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+    .modal-content-c {
+      position: relative;
+      margin: 5% auto;
+      width: 100%;
+      max-width: 1000px;
+      height: 500px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+    }
+    #pdf-iframe-c {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /*---*/
+  .modal-pdf {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+    
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      width: 100%;
+      max-width: 1000px;
+      height: 500px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    #iframe-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    
+    #pdf-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  /* Estilos de visor de imágenes */
+  .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .lightbox-content {
+      display: block;
+      margin: 0 auto;
+      max-width: 80%;
+      max-height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+  }
+  
+  /* Media queries para hacer que la galería sea responsive */
+  @media (max-width: 768px) {
+      .image {
+          flex-basis: 100%; /* En dispositivos más pequeños, las imágenes ocuparán el 100% del ancho */
+      }
+      .lightbox-content {
+          max-width: 90%; /* Ajustar el tamaño del visor de imágenes en dispositivos pequeños */
+      }
+  }
+  
+  
+  
+  
+  nav {
+    background-color: #39ab57;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 60px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    padding: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #287c3e;
+    color: #fff;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+  
+    nav ul {
+        width: 100%;
+        display: none;
+    }
+  
+    nav ul.show {
+        display: block;
+    }
+  
+    .toggle-nav {
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+    }
+  }
+  
+  
+  
+  /* Estilos para pantallas grandes */
+  nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  }
+  
+  nav li {
+  margin: 0;
+  padding: 0;
+  }
+  
+  nav a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  }
+  
+  /* Estilos para pantallas pequeñas (menos de 768px de ancho) */
+  @media screen and (max-width: 768px) {
+  nav ul {
+  flex-direction: column;
+  }
+  
+  nav li {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  }
+  
+  nav li:last-child {
+  border-bottom: 1px solid #ccc;
+  }
+  }
+  /*footer*/
+  footer {
+      background-color: #39ab57;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    footer p {
+      margin: 0;
+    }
+    
+    address {
+      font-style: normal;
+    }
+   
+  /*modals tab*/
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    height: auto;
+    width: auto;
+    background-color: #287c3e;
+    color: #ffffff;
+    padding: 55px;
+    border-radius: 5px;
+}
+.title-modal{
+    background-color: #952d3d;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 14px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.modal-content h2 {
+    color: #952d3d;
+}
+
+.modal-close {
+    cursor: pointer;
+}
+
+/*tabs con*/
+
+.tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.tab {
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}  
+  
+  
