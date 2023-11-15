@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesJor.css">
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="index.js"></script>
@@ -287,60 +287,55 @@
                 <h1 class="display-6">Ponentes</h1>
               </div>
               <div class="seccion">
-                <div class="card">
-                  <div class="image">
-                    <img src="https://images.pexels.com/photos/819530/pexels-photo-819530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 1">
-                  </div>
-                  <div class="name_p"><h2>Luis Martínez</h2>
-                </div>
-                  <p>Administrador de Sistemas</p>
-                </div>
-                <div class="card">
-                    <div class="image">
-                        <img src="https://images.pexels.com/photos/943084/pexels-photo-943084.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Imagen 2">
-                    </div>
-                    <div class="name_p">
-                        <h2>María González</h2>
-                    </div>
-                  <p>Ingeniera de Software</p>
-                </div>
-                <div class="card">
-                  <div class="image">
-                    <img src="img/ddf0738400b2f9de9062fb84d2976384.jpg" alt="Imagen 1">
-                  </div>   
-                  <div class="name_p">
-                    <h2>Ana Rodríguez </h2>
-                  </div>           
-                  <p>Desarrolladora Front-End</p>
-                </div>
-                <div class="card">
-                  <div class="image">
-                    <img src="https://images.pexels.com/photos/1080243/pexels-photo-1080243.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 1">
-                  </div> 
-                  <div class="name_p">
-                    <h2>Juan Pérez </h2>
-                  </div>                
-                  <p>Analista de Seguridad Informática</p>
-                </div>
-                <div class="card">
-                  <div class="image">
-                    <img src="https://images.pexels.com/photos/2232981/pexels-photo-2232981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 1">
-                  </div> 
-                  <div class="name_p">
-                    <h2>Carlos López</h2>
-                  </div>             
-                  <p>Arquitecto de Soluciones de TI</p>
-                </div>
-                <div class="card">
-                  <div class="image">
-                    <img src="https://images.pexels.com/photos/7959665/pexels-photo-7959665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 1">
-                  </div>  
-                  <div class="name_p">
-                    <h2>Isabel García</h2>
-                  </div>            
-                  <p> Especialista en Data Science</p>
-                </div>
-              </div>
+              <?php
+    include 'admin/db.php';
+
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+
+// Realizar la consulta SQL con filtro para el campo "dia"
+$sql = "SELECT 
+id_ponente,	
+nombre_ponente,	
+ocupacion_ponente,	
+descripcion_ponente,	
+foto_ponente_nombre,	
+foto_ponente_tipo,	
+foto_ponente FROM ponentes";
+$result = $conexion->query($sql);
+
+// Mostrar los resultados en la tabla
+if ($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()) {
+
+      $foto = $row ['foto_ponente'];        
+      echo "<div class='card'>";
+      echo"<div class='image'>";
+      echo"<div class='image'>";
+        echo"<img src='data:image/png;base64," . base64_encode($foto) . "' alt='Imagen_ponente'>";
+        echo"</div>";
+        echo"</div>";
+        echo"<div class='name_p'>";
+        echo"<a href='#ponentes'>{$row['nombre_ponente']}</a>";
+        echo" </div>";
+        echo"<p>{$row['ocupacion_ponente']}</p>";
+        echo" </div> ";
+
+      
+    }
+
+    echo "</tbody>";
+    echo "</table>";
+} else {
+    echo "<p>No hay resultados</p>";
+}
+
+// Cerrar la conexión
+$conexion->close();
+?>
            </section>
            
            

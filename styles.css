@@ -4,7 +4,7 @@
   body{
       margin: 0;
       font-size: 20px;
-      background: rgb(135, 228, 166);
+      background: rgb(255, 255, 255);
       
     }
     /* Since positioning the image, we need to help out the caption */
@@ -644,30 +644,45 @@
     width: auto;
     background-color: #287c3e;
     color: #ffffff;
-    padding: 25px;
+    padding: 55px;
     border-radius: 5px;
 }
-
-.title-modal {
+.title-modal{
     background-color: #952d3d;
     color: #ffffff;
     justify-content: center;
     display: flex;
     box-shadow: 0 14px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
-.modal-content h2, .modal-content h4 {
+.modal-content h2 {
     color: #952d3d;
 }
 
 .modal-close {
     cursor: pointer;
 }
-@media screen and (max-width: 600px) {
-    .modal {
-        top: -170px;
-    }
-  }
-  
+
+/*tabs con*/
+
+.tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.tab {
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}  
   
   
