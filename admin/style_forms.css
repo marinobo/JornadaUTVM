@@ -28,6 +28,10 @@ nav a {
     color: #fff;
 }
 
+.section-archivo{
+    display: none;
+}
+
 
 
 .content {
