@@ -342,54 +342,187 @@
                 </div>
               </div>
            </section>
+           
+           
+<section id="talleres">
+<div class="baner">
+            <h1 class="display-6">Convocatorias <span>/</span> <span>Talleres</span></h1>
+          </div>
+          
+ 
+    <div class="seccion1">
+        <div class="link-row">
+            <a  onclick="openContent(event, '4');">
+                <div class="tablink">Deportivas</div>
+            </a>
+            <a onclick="openContent(event, '5');">
+                <div class="tablink">Culturales</div>
+            </a>
+            <a  onclick="openContent(event, '6');">
+                <div class="tablink">Talleres</div>
+            </a>
+        </div>
+        <div class="confes">
+            <div id="4" class="content">
+                <div class="seccion">
+                  <?php
 
-       <section id="talleres">
-        <div class="baner">
-            <h1 class="display-6">Convocatorias</h1>
-          </div>
-          <div class="seccion">
-              <div class="card">
-                <img src="img/logo.png" alt="Imagen 1">
-                <div class="name_p" >
-                    <h2>Convocatoria 1</h2>
+                  // Conexión a la base de datos
+
+                  include 'admin/db.php';
+                  // Verifica la conexión
+
+                  if (!$conexion) {
+                    die("La conexión falló: " . mysqli_connect_error());
+                  }
+                  // consulta a la base de datos
+                  $query = "SELECT * FROM convocatorias";
+                  $resultado = mysqli_query($conexion, $query);
+
+                  // verificar si hay resultados
+                  if (mysqli_num_rows($resultado) > 0) {
+                    
+                    $deportivas = [];
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
+                      $id_convocatoria = $fila['id_convocatoria'];
+                      $tipo_convocatoria = $fila['tipo_convocatoria'];
+                      $nombre_convocatoria = $fila['nombre_convocatoria'];
+                      $descripcion_convocatoria = $fila['descripcion_convocatoria'];
+                      // genera cards dinámicamente solo para convocatorias deportivas
+                      if ($tipo_convocatoria == "deportiva") {
+                        $tarjeta = "
+                        <div class='card'>
+                            <img src='img/logo.png' alt='Imagen 1'>
+                            <div class='name_p'>
+                                <h2>$nombre_convocatoria</h2>
+                            </div>
+                            <p>$descripcion_convocatoria</p>
+                            <a href='#talleres' class='btn btn-success' id='open-pdf-c'>Leer más</a>
+                        </div> ";
+                        // Agregar la tarjeta al array correspondiente
+                        $deportivas[] = $tarjeta;
+                      }
+                    }
+                    // Imprimir cards deportivas
+                    echo implode('', $deportivas);
+                  } else {
+                     echo "No hay convocatorias disponibles.";
+                    }
+                    // se cierra conexión
+                    mysqli_close($conexion);
+                    ?>
+                    
                 </div>
-                <p>Descripción</p>
-                <a href="#talleres" class="btn btn-success" id="open-pdf-c">Leer más</a>
-                <div id="pdf-modal-c" class="modal-pdf-c">
-                    <div class="modal-content-c">
-                      <iframe id="pdf-iframe-c" src="documents/1.pdf"></iframe>
-                    </div>
-                  </div>
-              </div>
-              <div class="card">
-                <img src="img/logo.png" alt="Imagen 1">
-                <div class="name_p">
-                    <h2>Convocatoria 2</h2>
+            </div>
+        
+            <div id="5" class="content">
+                <div class="seccion">
+                    <?php
+
+                  // Conexión a la base de datos
+
+                  include 'admin/db.php';
+                  // Verifica la conexión
+                  
+                  if (!$conexion) {
+                    die("La conexión falló: " . mysqli_connect_error());
+                  }
+                  // consulta a la base de datos
+                  $query = "SELECT * FROM convocatorias";
+                  $resultado = mysqli_query($conexion, $query);
+
+                  // verificar si hay resultados
+                  if (mysqli_num_rows($resultado) > 0) {
+                    
+                    $culturales = [];
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
+                      $id_convocatoria = $fila['id_convocatoria'];
+                      $tipo_convocatoria = $fila['tipo_convocatoria'];
+                      $nombre_convocatoria = $fila['nombre_convocatoria'];
+                      $descripcion_convocatoria = $fila['descripcion_convocatoria'];
+                      // genera cards dinámicamente solo para convocatorias deportivas
+                      if ($tipo_convocatoria == "cultural") {
+                        $tarjeta = "
+                        <div class='card'>
+                            <img src='img/logo.png' alt='Imagen 1'>
+                            <div class='name_p'>
+                                <h2>$nombre_convocatoria</h2>
+                            </div>
+                            <p>$descripcion_convocatoria</p>
+                            <a href='#talleres' class='btn btn-success' id='open-pdf-c'>Leer más</a>
+                        </div> ";
+                        // Agregar la tarjeta al array correspondiente
+                        $culturales[] = $tarjeta;
+                      }
+                    }
+                    // Imprimir cards culturales
+                    echo implode('', $culturales);
+                  } else {
+                     echo "No hay convocatorias disponibles.";
+                    }
+                    // se cierra conexión
+                    mysqli_close($conexion);
+                    ?>
+                
                 </div>
-                <p>Descripción</p>
-                <a href="#" class="btn btn-success">Leer más</a>
-              </div>
-              <div class="card">
-                <img src="img/logo.png" alt="Imagen 3">
-                <div class="name_p">
-                    <h2>Convocatoria 3</h2>
+            </div>
+        
+            <div id="6" class="content">
+                <div class="seccion">
+                <?php 
+                // Conexión a la base de datos
+                include 'admin/db.php';
+                // Verifica la conexión
+                if (!$conexion) {
+                  die("La conexión falló: " . mysqli_connect_error());
+                }
+                // consulta a la base de datos
+                $query = "SELECT * FROM convocatorias";
+                $resultado = mysqli_query($conexion, $query);
+                // verificar si hay resultados
+                if (mysqli_num_rows($resultado) > 0) {
+                  $talleress = [];
+                  while ($fila = mysqli_fetch_assoc($resultado)) {
+                    $id_convocatoria = $fila['id_convocatoria'];
+                    $tipo_convocatoria = $fila['tipo_convocatoria'];
+                    $nombre_convocatoria = $fila['nombre_convocatoria'];
+                    $descripcion_convocatoria = $fila['descripcion_convocatoria'];
+                    // genera cards dinámicamente solo para convocatorias deportivas
+                    if ($tipo_convocatoria == "talleres") {
+                      $tarjeta = "
+                      <div class='card'>
+                          <img src='img/logo.png' alt='Imagen 1'>
+                        <div class='name_p'>
+                           <h2>$nombre_convocatoria</h2>
+                        </div>
+                           <p>$descripcion_convocatoria</p>
+                             <a href='#talleres' class='btn btn-success' id='open-pdf-c'>Leer más</a>
+                      </div> ";
+                      // Agregar la tarjeta al array correspondiente 
+                      $talleress[] = $tarjeta;
+                    } 
+                  }
+                  // Imprimir cards deportivas
+                
+                  echo implode('', $talleress);
+                } else {
+                  echo "No hay convocatorias disponibles.";
+                }
+                // se cierra conexión
+                mysqli_close($conexion);
+                ?>
+                   
                 </div>
-                <p>Descripción</p>
-                <a href="#" class="btn btn-success">Leer más</a>
-              </div>
-              <div class="card">
-                <img src="img/logo.png" alt="Imagen 4">
-                <div class="name_p">
-                    <h2>Convocatoria 4</h2>
-                </div>
-                <p>Descripción</p>
-                <a href="#" class="btn btn-success">Leer más</a>
-              </div>
-          </div>
+            </div>
+        </div>  
+
+
+
+      </div>
        </section>
 
       
-       <section id="galeria">
+<section id="galeria">
         <div class="baner">
             <h1 class="display-6">Galería</h1>
           </div>
@@ -416,7 +549,7 @@
        </section>
 
 
-       <footer>
+<footer>
         <div class="footer-content">
           <p>&copy; 2022 Universidad Tecnológica del Valle del Mezquital</p>
           <br>
@@ -428,8 +561,7 @@
           </address>
         </div>
       </footer>
-
-    
+      
       <script>
 
 function openModal(modalId) {

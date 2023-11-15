@@ -70,6 +70,8 @@ include 'forms_convocatoria.php';
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="../js/bootstrap.js"></script>
         <script src="../js/bootstrap.min.js"></script>
+        <script src="validar_archivos.js"></script>
+
         <!-- Agrega esto en el head de tu documento -->
         <title>Administrador</title>
     </head>
@@ -135,14 +137,18 @@ include 'forms_convocatoria.php';
             <div class="form-container">
                 <form method="post" action="" class="activity-form" enctype="multipart/form-data">
                     <h1>Convocarorias</h1>
-                    <select class="form-con" name="tipo">
+                    <select class="form-con" name="tipo" required>
                         <option value="">Elige el tipo de convocatoria</option>
                         <option value="deportiva">Deportiva</option>
                         <option value="cultural">Cultural</option>
                         <option value="talleres">Taller</option>
                     </select>
-                    <input type="text" name="nameCon" placeholder="Nombre de la convocatoria">
-                    <input type="file" name="archivoCon" /><br/><br/>
+                    <input type="text" name="nameCon" placeholder="Nombre de la convocatoria" required>
+                    <textarea name="desCon" placeholder="Breve descripción de la convocatoria" required></textarea>   
+                    <label for="fotoCon">Seleccione una imagen (jpg, jpeg, png) no mayor a 3 MB</label>
+                    <input type="file" name="fotoCon" id="fotoCon" required accept=".jpg, .jpeg, .png" onchange="validateFile(this)">
+                    <label for="archivoCon">Seleccione un archivo PDF no mayor a 3 MB</label>
+                    <input type="file" name="archivoCon" id="archivoCon" required accept=".pdf" onchange="validateFile(this)"><br/><br/>
                     <input type="submit" name="btnGuardarCon" value="Guardar">
                 </form>
             </div>
