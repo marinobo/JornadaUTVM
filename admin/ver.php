@@ -1,5 +1,4 @@
 <?php
-
 //obtener el id de la imagen
 $id=  filter_input(INPUT_GET, 'id');
 if($id=='')

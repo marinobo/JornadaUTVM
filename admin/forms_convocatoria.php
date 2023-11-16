@@ -43,9 +43,7 @@ if (isset($_POST['btnGuardarCon']))
             archivo_convocatoria_nombre, archivo_convocatoria_tipo, archivo_convocatoria_binario) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
-    $stmt->bind_param('sssssssss', $tipo, $nombreConvocatoria, $descripcionConvocatoria,
-                      $foto_nombre, $foto_tipo, $foto_binario,
-                      $archivo_nombre, $archivo_tipo, $archivo_binario);
+    $stmt->bind_param('sssssssss', $tipo, $nombreConvocatoria, $descripcionConvocatoria, $foto_nombre, $foto_tipo, $foto_binario, $archivo_nombre, $archivo_tipo, $archivo_binario);
     
     // Ejecutamos la sentencia
     if (mysqli_stmt_execute($stmt))
