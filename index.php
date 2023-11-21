@@ -9,7 +9,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="stylesJor.css">
+        <link rel="icon" type="image/ico" href="img/logo.png">
+        <link rel="stylesheet" href="jornada.css">
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="index.js"></script>
@@ -20,7 +21,8 @@
             <img src="img/b.jpg" id="logo" alt="header" width="100%">
         </header>
         
-        <nav>
+       <main>
+         <nav class="animated-element">
             <ul>
                 <li><a href="#talleres">Convocatorias</a></li>
                 <li><a href="#ponentes">Ponentes</a></li>
@@ -65,8 +67,8 @@
         </div>
         
         <section id="actividades">
-            <div class="baner">
-                <h1 class="display-6">Actividades</h1>
+            <div class="baner animated-element">
+                <h1 class="display-6 ">Actividades</h1>
             </div>
             <div class="seccion1">
                 <div class="link-row">
@@ -97,7 +99,7 @@
                         // Mostrar los resultados en la tabla
                         if ($result->num_rows > 0)
                         {
-                            echo "<table class='table table-striped table-bordered'>";
+                            echo "<table >";
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th scope='col'>Actividad</th>";
@@ -158,7 +160,7 @@
                         // Mostrar los resultados en la tabla
                         if ($result->num_rows > 0)
                         {
-                            echo "<table class='table table-striped table-bordered'>";
+                            echo "<table>";
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th scope='col'>Actividad</th>";
@@ -204,8 +206,9 @@
                     </div>
                     
                     <div id="3" class="content">
-                        <a href="#actividades" class="openModalBtnPro btn btn-success">Descargar programa</a>
-                        
+   
+                       <a href="#actividades" class="openModalBtnPro btn btn-success">Descargar programa</a>
+                
                         <?php
                         include 'admin/db.php';
                         // Verificar la conexión
@@ -219,7 +222,8 @@
                         // Mostrar los resultados en la tabla
                         if ($result->num_rows > 0)
                         {
-                            echo "<table class='table table-striped table-bordered'>";
+                        
+                          echo "<table>";
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th scope='col'>Actividad</th>";
@@ -305,17 +309,23 @@
                         echo"<div class='name_p'>";
                         echo"<a href='#ponente' class='openModalBtnCont' onclick='openModal(\"myModalCont{$row['id_ponente']}\")'>" . $row["nombre_ponente"] . "</a>";
                         echo" </div>";
+                        echo"<br>";
+                        echo"<div class='content-mo-po'>";
                         echo"<p>{$row['ocupacion_ponente']}</p>";
+                        echo" </div>";
+                       
                         echo" </div> ";
                         // Crear modal para cada actividad
                         echo "<div id='myModalCont{$row['id_ponente']}' class='modal'>";
                         echo "<div class='modal-content'>";
                         echo " <div class='title-modal'><h1>{$row['nombre_ponente']}</h1></div>";
                         echo "<hr>";
-                        echo "<h2>Semblanza:</h2>";
-                        echo "<h5> {$row['descripcion_ponente']}</h5>";
+                        echo "<p> {$row['descripcion_ponente']}</p>";
+                        echo"<div class='btn-mo'>";
                         echo "<button class='modal-close btn btn-danger' onclick='closeModal(\"myModalCont{$row['id_ponente']}\")'>Cerrar</button>";
                         echo "</div>";
+                        echo "</div>";
+                       
                         echo "</div>";
                     }
                     echo "</tbody>";
@@ -571,7 +581,7 @@
                 <img class="lightbox-content" id="lightbox-img">
             </div>
         </section>
-        
+       </main>
         <footer>
             <div class="footer-content">
                 <p>&copy; 2022 Universidad Tecnológica del Valle del Mezquital</p>
@@ -586,7 +596,8 @@
         </footer>
         
         <script>
-        
+       
+        //
         function openModal(modalId)
         {
             document.getElementById(modalId).style.display = "flex";
@@ -608,6 +619,7 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+      
     //pdf-conv
     $(document).ready(function ()
     {

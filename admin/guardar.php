@@ -149,7 +149,9 @@ include 'forms_convocatoria.php';
                     <h1>Ponentes</h1>
                     <input type="text" name="namePon" placeholder="Nombre del ponente" required>
                     <input type="text" name="ocupPon" placeholder="Ocupación del ponente" required>
-                    <textarea name="desPon" placeholder="Descripción del ponente" required></textarea>
+                    <label for="miTextarea">Ingresa máximo 500 caracteres</label>
+                    <textarea id="miTextarea" name="desPon" placeholder="Descripción del ponente" required></textarea>
+                    <p id="contadorCaracteres">Caracteres restantes: 500</p>
                     <label for="fotoCon">Seleccione una imagen (jpg, jpeg, png) no mayor a 3 MB</label>                        
                     <input type="file" name="fotoPon" required required accept=".jpg, .jpeg, .png" onchange="validateFile(this)">
                     <input type="submit" name="btnGuardarPon" value="Guardar">
@@ -186,6 +188,22 @@ include 'forms_convocatoria.php';
 </body>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var textarea = document.getElementById('miTextarea');
+    var contador = document.getElementById('contadorCaracteres');
+    var limiteCaracteres = 500;
+
+    textarea.addEventListener('input', function () {
+        var caracteresRestantes = limiteCaracteres - textarea.value.length;
+
+        if (caracteresRestantes < 0) {
+            textarea.value = textarea.value.slice(0, limiteCaracteres);
+            caracteresRestantes = 0;
+        }
+
+        contador.textContent = 'Caracteres restantes: ' + caracteresRestantes;
+    });
+});
 //serrar sesion
 document.getElementById("btnCerrarSesion").addEventListener("click", function()
 {
